@@ -1,0 +1,87 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+:root{
+  --highlightGradient:linear-gradient(to right, 
+  #FF000000,
+  #FF0000, /* red */
+  #FF7F00, /* orange */
+  #FFFF00, /* yellow */
+  #00FF00, /* green */
+  #0000FF, /* blue */
+  #4B008200;);
+  --whitegradp:52%;
+  --redgradp:54%;
+  --blackgradp:50%;
+
+}
+
+
+body {
+    background-color:rgb(194, 0, 0);;
+    background-size: cover;
+    overflow: hidden;
+    font-family: 'Roboto';
+    z-index: 0;
+}
+
+.modernBlack{
+  color:#ffffff;
+  font-weight: 350;
+  font-family: 'Roboto';
+}
+
+.modern{
+  color:#ffffff;
+  font-weight: 350;
+  font-family: 'Roboto';
+}
+
+#banner {
+  position:absolute;
+  z-index:1;
+    font-family: 'Roboto';
+    font-weight:300;
+    margin: auto;
+    font-size: 3.5rem;
+    color:rgba(255, 255, 255, 0);
+    position:absolute;
+    top:0%;
+    /* transform:translateY(calc(-10rem / 2)); */
+    width:100%;
+    text-align: center;
+    transition: text-shadow 0.5s ease, color 0.25s cubic-bezier(.49,1.44,.57,-1.51);
+    transition-delay:2s,1s;
+    /* text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0),
+        0 0 0.125em hsla(320, 100%, 90%, 0),
+        0 0 0.125em hsla(231, 100%, 60%, 0),
+        0 0 0.125em hsla(200, 100%, 60%, 0); */
+  }
+
+
+.load#banner{
+
+  color:rgba(0, 0, 0, 0.75);
+  /* text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(231, 100%, 60%, 0.3),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 1); */
+}
+
+#image{
+  position:absolute;
+  transition: opacity 0.5s ease;
+  opacity:0;
+  transition-delay: 2s;
+  height:100%;
+  width:100%;
+  background:url("") no-repeat center;
+  background-size: cover;
+  z-index: 0;
+}
+
+.load#image{
+  opacity:1;
+}

@@ -1,0 +1,44 @@
+.intro{
+  opacity:0;
+  transition:opacity 0.5s ease;
+  transition-delay:0s;
+  color: var(--aboutTitleColor);
+  pointer-events: none;
+  
+}
+
+._aboutMenu .intro{
+  opacity:1;
+  transition:opacity 1s ease;
+  pointer-events: all;
+  transition-delay:3.4s;
+  
+}
+
+#introHeadline{
+  position:absolute;
+  width:100%;
+  font-size:3em;
+  
+  font-weight:300;
+  transition:opacity 1s ease;
+  top:10vh;
+  margin-top:1vh;
+  text-align: center;
+}
+
+#introBody{
+  width: 70vw;
+  font-size:2em;
+  transform: translateX(15vw);
+  position:absolute;
+  font-weight:200;
+  transition:opacity 1s ease;
+  top:15vh;
+  margin-top:1vh;
+  text-align: center;
+}
+
+b {
+  font-weight: 300;
+}

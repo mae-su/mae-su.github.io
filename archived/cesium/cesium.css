@@ -1,0 +1,21 @@
+body{
+    font-family: 'Roboto';
+    margin:auto;
+    width:100vw;
+    background-color: rgb(61, 61, 61);
+}
+
+.iframe{
+    width: 100%;
+}
+.img{
+    justify-content:center;
+}
+#sidebarButton{
+    position:fixed;
+    
+}
+.sidenav {
+    padding-top: 15px;
+    background-color: rgba(14,14,14,0.6);
+  }

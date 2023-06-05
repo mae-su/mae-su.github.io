@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+.subAnim {
+    --animstartvh: 25vh;
+    --animendvh: 17vh;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 32px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-user-select: none;
+    user-select: none;
+    zoom: 1.3;
+}
+
+.animfoc {
+    height: 60px;
+    position: relative;
+    opacity: 0;
+    animation: showup 7s 1;
+    padding-top: 0;
+    z-index: 10;
+}
+
+.animloc {
+    position: relative;
+    width: 0px;
+    animation: reveal 7s 1;
+    padding-top: 0;
+    z-index: 10;
+}
+
+.animloc span {
+    animation: slidein 7s 1;
+}
+
+@keyframes showup {
+    0% {
+        padding-top: var(--animstartvh);
+        opacity: 0;
+        visibility: visible;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        padding-top: var(--animstartvh);
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+
+    }
+
+    100% {
+        padding-top: var(--animendvh);
+        opacity: 0;
+        width: 106px;
+        -webkit-transform: scale(2);
+        transform: scale(2);
+
+    }
+}
+
+@keyframes slidein {
+    0% {
+        visibility: visible;
+        margin-left: -800px;
+        height: 0px
+    }
+
+    20% {
+        margin-left: -800px;
+    }
+
+    35% {
+        margin-left: 0px;
+    }
+
+    100% {
+        margin-left: 0px;
+        height: 100px
+    }
+}
+
+@keyframes reveal {
+    0% {
+        visibility: visible;
+        padding-top: var(--animstartvh);
+        opacity: 0;
+        width: 0px;
+    }
+
+    20% {
+        opacity: 1;
+        width: 0px;
+    }
+
+    30% {
+        width: 106px;
+    }
+
+    80% {
+        padding-top: var(--animstartvh);
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+    100% {
+        padding-top: var(--animendvh);
+        opacity: 0;
+        width: 106px;
+        -webkit-transform: scale(2);
+        transform: scale(2);
+
+
+    }
+}

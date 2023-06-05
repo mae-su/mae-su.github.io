@@ -1,0 +1,45 @@
+<html class="_default _defaultInteractable">
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="main.js"></script>
+</head>
+
+<body>
+
+  <div class="nav" id="nav">
+    <div id="top" class="navLayer" onclick="expandAboutMenu()"></div>
+    <div id="mid" class="navLayer" onclick="expandProjectsMenu()"></div>
+    <span id="projectsMenuButton" class="navButton modernBlack" onclick="expandProjectsMenu()">projects</span>
+    <span id="siteMenuButton" class="navButton modernBlack" onclick="expandAboutMenu()">about me</span>
+  </div>
+
+  <div class="modern" id="banner">mae<span class="red">.red</span></div>
+
+  <div class="socials" id="socials">
+    <a href="https://github.com/mae-su/" class="modern" id="github">github</a>
+    <a href="https://www.instagram.com/maewasnotfound/" class="modern" id="instagram">instagram</a>
+    <a href="https://dsc.bio/maewasnotfound" class="modern" id="discord">discord</a>
+  </div>
+
+  <div class="intro">
+    <span id="introHeadline" class="modern">mae <i>(she/her)</i></span>
+    <span id="introBody" class="modern">hi!! my name is mae, simply put i'm a queer engineering enthusiast.</span>
+  </div>
+
+  <div class="header">
+    <span class="header modern" id="projectsTitle">loading...</span>
+    <span class="header modern" id="projectsLoading">this area is still under construction.</span>
+  </div>
+  <!-- <div class="modern" id="projectstempredir">this page is still under construction.</div> -->
+  <div class="header">
+    <span class="header modern" id="aboutTitle">about me</span>
+    <span class="header modern" id="aboutLoading" onclick="siteState()">home</span>
+  </div>
+
+  <div id="gradientLine"></div>
+
+</body>
+
+</html>

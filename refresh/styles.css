@@ -1,0 +1,106 @@
+@import url(css/nav.css);
+@import url(css/list/headerAssets.css);
+@import url(css/list/closebutton.css);
+@import url(css/socials.css);
+@import url(css/aboutme.css);
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+:root{
+  --highlightGradient:linear-gradient(to right, 
+  #FF000000,
+  #FF0000, /* red */
+  #FF7F00, /* orange */
+  #FFFF00, /* yellow */
+  #00FF00, /* green */
+  #0000FF, /* blue */
+  #4B008200
+);
+}
+
+
+body {
+    background:url(./bg.jpg) no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    font-family: 'Roboto';
+    z-index: 0;
+}
+
+.modernBlack{
+  color:#ffffff;
+  font-weight: 350;
+  font-family: 'Roboto';
+}
+
+.modern{
+  color:#ffffff;
+  font-weight: 350;
+  font-family: 'Roboto';
+}
+
+#gradientLine{
+  position:fixed;
+  z-index: 0;
+  opacity:0;
+  transition:opacity 0.5s ease;
+  transform: translate(0, 75vh);
+  margin-left: 5%;
+  margin-right: 5%;
+  top: 80%;
+  width:auto;
+  align-self: center;
+  height:0.25%;
+  background-color:#ffffff;
+}
+
+._aboutMenu #gradientLine{
+  position:static;
+  opacity:0.35;
+  transition:opacity 1s linear;
+  transition-delay: 3.2s;
+  background: var(--highlightGradient);
+
+}
+
+#banner{
+  position:absolute;
+  bottom:calc(16vh);
+  left:16vh;
+  margin: 20px;
+  /* color:rgb(167, 146, 129); */
+  font-size: 10vh;
+  font-weight:200;
+  opacity:1;
+  transition: opacity 1s ease, font-size 0.5s ease, transform 0.5s ease;
+  transition-delay:3s, 0s, 0s;
+  z-index: 1;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+._menu #banner{
+  transition: opacity 0.3s;
+  transition-delay: 0.6s;
+  opacity:0;
+}
+
+.red{
+  color:red;
+  font-weight: 300;
+}
+
+@media (max-width: 500px), (max-aspect-ratio: 11/16) {
+  #banner{
+    transition:all ease 0.5s;
+    transition-delay:0s; 
+    transform: translate(-16vh,16vh);
+    font-size: 10vw;
+  }
+}
+
+i{
+  font-weight:200;
+  font-size:0.7em;
+}

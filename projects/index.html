@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>projects</title>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="../archived/global.css" />
+    <link rel="stylesheet" href="../archived/sidebar.css" />
+    <link rel="stylesheet" href="projects.css" />
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../archived/textscramble.js"></script>
+    <script src="strings.js"></script>
+    <script src="projects.js"></script>  
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+<body>
+   <div id="sidebar" class="sidenav z1">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#"></a>
+    <a href="#" onclick="closeNav()">home</a>
+    <!--a href="javascript:void(0)" onclick="closepage('./cesium/index.html')">cesiumNC</a-->
+    <a href="javascript:void(0)" onclick="closepage('./projects/')" id="projectsnav">projects</a>
+    <a href="javascript:void(0)" onclick="closepage('./cesium/')">cesiumNC</a>
+  </div>
+    <img class = "preload" src = "kiosk-1.jpg">
+    <div id="curtain" class="active"><span></span><span></span><span></span></div>
+    <div id="splash">dbm</div>
+    <div id="background"></div>
+    <div id="color"></div>
+    <div class="gallery">
+        <div class="lower">
+            <div class="stripe"></div>
+            <h1 id="title" class="title">_</h1>
+            <br>
+            <br>
+            <h1 id="motto"></h1>
+            <br>
+            <br>
+            <h1 id="cesiumLearnMore" href="javascript:void(0)" onclick="exittocesium(0)">read the docs →</h1>
+            <br>
+            <h1 id="cesiumCAD" href="javascript:void(0)" onclick="exittocesium(1)">see it in 3D →</h1>
+        </div>
+        <div class="lefthandle handle">&nbsp;<h2 href="javascript:void(0)" onclick="left()">&lt;</h2></div>
+        <div class="righthandle handle"><h2 href="javascript:void(0)" onclick="right()">&gt;</h2>&nbsp;</div>
+      </div>
+
+      <div class="scrollover" id="scrollover">
+        <div id="headline">title</div>
+      </div>
+</body>

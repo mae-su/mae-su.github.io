@@ -1,0 +1,67 @@
+/* CLOSE BUTTON (implemented from https://codepen.io/perry_nt/pen/NxobOm)*/
+
+.closebtn_container{
+  transition:all 1s cubic-bezier(.17,.67,.64,1.25);
+  position: absolute;
+  opacity:0;
+  width:70px;
+  height:70px;
+  z-index: 10;
+  right:0;
+  top:0.5em;;
+  transition-delay:1s;
+}
+
+._menu .closebtn_container{
+  transform:rotate(720deg);
+  opacity:1;
+}
+
+._default .closebtn_container{
+  transition-delay: 0s;
+  pointer-events: none;
+}
+
+.closebtn {
+  position: relative;
+  margin: auto;
+  height:inherit;
+  width: inherit;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.closebtn_inner {
+  width: inherit;
+  text-align: center;
+}
+
+.closebtn label { 
+  font-size: 1.5em; 
+  line-height: 3em;
+  color: #fff;
+  transition: all .3s ease-in;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.closebtn_inner:before, .closebtn_inner:after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: inherit;
+  background: #FFF;
+  left: 0;
+  transition: all .3s ease-in;
+}
+
+.closebtn_inner:before {
+  top: 50%; 
+  transform: rotate(45deg);
+}
+
+.closebtn_inner:after {  
+  bottom: 50%;
+  transform: rotate(-45deg);
+}
+
