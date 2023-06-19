@@ -9,16 +9,20 @@
   transform: translate(-50%, -60%);
   transition: opacity 0.5s ease;
   color: var(--aboutLoadingColor) !important;
-  font-size:1.9em
+  font-size:1.9em;
+  pointer-events: none;
 } 
+.socials:hover{
+  color:white;
+}
 ._aboutMenu .socials{
   transition:opacity 1s linear;
   transition-delay: 3.2s;
   opacity:1;
+  pointer-events: all;
 }
 a{
-  padding: 1vw;
-  text-decoration: none;
-  font-weight: 500 !important;
+  text-decoration: underline solid 0.05em;
+  font-weight: 400 !important;
   color: var(--aboutLoadingColor) !important;
 }

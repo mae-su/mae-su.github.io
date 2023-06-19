@@ -4,7 +4,6 @@
   transition-delay:0s;
   color: var(--aboutTitleColor);
   pointer-events: none;
-  
 }
 
 ._aboutMenu .intro{
@@ -17,23 +16,23 @@
 
 #introHeadline{
   position:absolute;
-  width:100%;
+  width:80vw;
   font-size:3em;
-  
+  transform: translateX(10vw);
   font-weight:300;
-  transition:opacity 1s ease;
+  transition:all 1s ease;
   top:10vh;
   margin-top:1vh;
   text-align: center;
 }
 
 #introBody{
-  width: 70vw;
+  width: 80vw;
   font-size:2em;
-  transform: translateX(15vw);
+  transform: translateX(10vw);
   position:absolute;
-  font-weight:200;
-  transition:opacity 1s ease;
+  font-weight:300;
+  transition:all 1s ease;
   top:15vh;
   margin-top:1vh;
   text-align: center;
@@ -41,4 +40,25 @@
 
 b {
   font-weight: 300;
+}
+
+@media (max-width: 500px), (max-aspect-ratio: 11/16) {
+  #introBody{
+    width:95vw;
+    transform:translateX(2.5vw);
+    font-size:2.8em;
+    text-align: left;
+    border-left:0.125em solid #cacaca;
+    
+    padding-left:0.5em;
+  }
+  #introHeadline{
+    width:95vw;
+    transform:translateX(2.5vw);
+    font-size:2.8em;
+    text-align: left;
+  }
+  #siteMenuButton{
+    font-weight:400;
+  }
 }
