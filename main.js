@@ -1,3 +1,10 @@
+(function () { //https://discourse.webflow.com/t/force-refresh-page-when-user-taps-browser-back-button/159352/2 removes vanilla JS cached states
+	window.onpageshow = function(event) {
+		if (event.persisted) {
+			window.location.reload();
+		}
+	};
+})();
 const urlParams = new URLSearchParams(window.location.search);
 const defaultInteractableTimeout = 1000;
 const defBG = "url(./bg.jpg) no-repeat center";
@@ -5,6 +12,7 @@ let resizeTimer;
 var isDebugMode = false;
 var noredirect = false;
 var donotadjust = false;
+
 window.onload = function () {
   dynamicNavTimeline();
   const urlParams = new URLSearchParams(window.location.search);
