@@ -5,6 +5,12 @@
 @import url(css/aboutme.css);
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+/* in case i'm offline lol: */
+/* @font-face { 
+  font-family: "Roboto";
+  src: local("Segoe UI Variable"),
+    url("SEGUIVAR.TTF") format("truetype");
+} */ 
 :root{
   --highlightGradient:linear-gradient(to right, 
   #FF000000,
@@ -73,11 +79,11 @@ body {
   opacity:1;
   transition: opacity 1s ease, font-size 0.5s ease, transform 0.5s ease;
   transition-delay:3s, 0s, 0s;
-  z-index: 1;
-  -webkit-user-select: none; /* Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
+  z-index: 11;
+  /* pointer-events:none; */
+  user-select: none;
+  /*cursor:pointer;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%); --ADD FOR .BLUE UPDATE-- */ 
 }
 
 ._menu #banner{
@@ -86,10 +92,28 @@ body {
   opacity:0;
 }
 
-.red{
+#red{
+  
   color:red;
+  /* transition:transform 0.2s, opacity 0.2s;
+  display: inline-block;
+  transform:translateY(50%);  --ADD FOR .BLUE UPDATE--*/
   font-weight: 300;
 }
+/*
+#blue{
+  pointer-events:none;
+  color:blue;
+  transition:transform 0.2s;
+  display: inline-block;
+  transform:translateY(50%);
+  font-weight: 300;
+}
+
+#banner:hover span{
+  pointer-events:all;
+  transform:translateY(0%); --ADD FOR .BLUE UPDATE--
+} */
 
 @media (max-width: 500px), (max-aspect-ratio: 11/16) {
   #banner{

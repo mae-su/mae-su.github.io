@@ -1,9 +1,30 @@
+/* in case i'm offline lol: */
+@font-face {
+    font-family: "Roboto";
+    src: local("Segoe UI Variable"),
+      url("SEGUIVAR.TTF") format("truetype");
+  }
+
 body{
     font-family: 'Roboto';
     margin:auto;
     width:100vw;
     
 }
+
+#banner{
+    text-align: center;
+    top:2em;
+    font-size: 2em;
+    color:white;
+    font-weight:300;
+    cursor:pointer;
+}
+.red{
+    color:red;
+    font-weight:400
+}
+
 a{
     color: inherit;
 }

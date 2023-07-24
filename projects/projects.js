@@ -7,13 +7,14 @@
 })();
 var cesiumindex = 2;
 var lastInteract = -100;
-var projects = ['machine room kiosk v2','machine room kiosk v1','signs @ mhs'],
-    motto = ["a lighter and more complete security kiosk.<br>","a new gandalf for the machine room.", 'some CNC machined signs for  millburn high school.'],
+var projects = ['machine room kiosk v2',"millburn robotics",'machine room kiosk v1','signs @ mhs'],
+    motto = ["a lighter and more complete security kiosk.<br>now in gold.","we made it smaller","the first gandalf for the machine room.", 'some CNC machined signs for millburn high school.'],
     signpics = ['url(sign-1.jpg)', 'url(sign-2.jpg)'],
+    robotpics = ['url(8405.jpg)']
     kioskpics = ['url(kiosk-1.jpg)', 'url(kiosk-2.jpg)', 'url(kiosk-3.jpg)'],
     kioskv2pics = ['url(kioskv2.webp)']
-    bodies = [kioskv2body,signbody, kioskbody],
-    images = [kioskv2pics,kioskpics, signpics],
+    bodies = [kioskv2body,robotbody, kioskbody,signbody],
+    images = [['url(kioskv2.webp)'],["url(8405.jpg)"],['url(kiosk-1.jpg)', 'url(kiosk-2.jpg)'], ['url(sign-1.jpg)', 'url(sign-2.jpg)']],
     index = 0;
 window.onload = function () {
     setTimeout(() => { document.getElementById("curtain").classList.remove("active"); }, 100);
@@ -113,8 +114,9 @@ function openNav() {
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
-    var sidebarButton = document.getElementById("sidebarButton");
-    sidebarButton.classList.remove("tracking-out-contract");
-    document.getElementById("sidebar").style.width = "0";
-    setTimeout(() => { sidebarButton.style.visibility = "visible"; sidebarButton.classList.add("tracking-in-expand"); }, 250);
+    // var sidebarButton = document.getElementById("sidebarButton");
+    // sidebarButton.classList.remove("tracking-out-contract");
+    // document.getElementById("sidebar").style.width = "0";
+    n = String(Window.href.location).strip("projects")[0]
+    Window.href.location = n
 }

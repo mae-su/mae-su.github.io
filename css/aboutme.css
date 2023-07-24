@@ -16,26 +16,30 @@
 
 #introHeadline{
   position:absolute;
-  width:80vw;
+  width:95vw;
   font-size:3em;
   transform: translateX(10vw);
   font-weight:300;
   transition:all 1s ease;
   top:10vh;
   margin-top:1vh;
-  text-align: center;
+  text-align: left;
 }
 
 #introBody{
   width: 80vw;
+  /* width:95vw; */
+  transform:translateX(2.5vw);
   font-size:2em;
+  text-align: left;
   transform: translateX(10vw);
   position:absolute;
   font-weight:300;
   transition:all 1s ease;
-  top:15vh;
-  margin-top:1vh;
-  text-align: center;
+  top:17.5vh;
+  
+  border-left:0.125em solid #cacaca;
+  padding-left:0.5em;
 }
 
 b {
@@ -48,9 +52,6 @@ b {
     transform:translateX(2.5vw);
     font-size:2.8em;
     text-align: left;
-    border-left:0.125em solid #cacaca;
-    
-    padding-left:0.5em;
   }
   #introHeadline{
     width:95vw;
