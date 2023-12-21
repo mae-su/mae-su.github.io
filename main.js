@@ -61,12 +61,10 @@ function expandAboutMenu() {
 
 function dynamicNavTimeline(){
   document.getElementById("nav").style.opacity=1;
-  setMenuSize("30vmin");
+  if(!navigator.userAgent.toLowerCase().includes('firefox')){ 
+    setMenuSize("30vmin"); //firefox doesn't like immediately running this. just makes the first screen look a bit cleaner
+  }
   delay(6000).then(() => {if(!donotadjust){setMenuSize("27vmin")}});
-}
-
-function cacheProjects(){
-  
 }
 
 //UTILS//

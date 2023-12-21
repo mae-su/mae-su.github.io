@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,400;1,500&display=swap');
+@import url('./fonts/Unima Nova/stylesheet.css');
+
+.stream{
+    position:absolute;
+    top:33%;
+    margin:5%;
+    left:0;
+    right:0;
+    display:block;
+}
+
+.stream-element{
+    color:var(--font-color);
+    width:90vw;
+    padding-left:1rem;
+    border-radius: 0.5rem;
+    animation:stream-element-appear 0.5s ease;
+    animation-fill-mode: forwards;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    background-color:#5f5f5f11;
+}
+
+img{
+    margin-right:1rem;
+    
+    width:calc(100% - 2rem);
+    border-top-left-radius:1.5rem;
+    border-bottom-right-radius:2rem;
+    border-top-right-radius:0.5rem;
+}
+
+h1,h2,h3{
+    font-weight:500;
+    display: inline-block;
+    position: relative;
+    color: var(--font-color);   
+    font-family: 'Univa Nova';
+    margin:0;
+}
+h1{
+    font-size:4rem;
+    font-weight: 100;
+}
+h2{
+    font-weight: 300;
+    animation:project-slogan-animation 0.5s ease;
+    animation-delay:0.5s;
+    font-size:2rem;
+    animation-fill-mode: both;
+    text-align: left;
+    width:100%;
+}
+@keyframes project-slogan-animation{
+    0%{
+        opacity:0;
+        transform:translateX(-5%);
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+p{
+    font-size:2rem;
+    margin:0.5rem;
+    display: block;
+    position: relative;
+    color: var(--font-color);
+    margin-top: 0.25rem;
+    margin-left: 2rem;
+    
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 3px;
+    left: 0;
+    background-color: var(--font-color);
+    transform-origin: bottom left;
+    /* transition: transform 0.25s ease-out; */
+    animation:stream-title-underline 0.5s ease;
+    animation-fill-mode: both;
+    animation-delay:0.5s;
+}
+
+@keyframes stream-title-underline{
+    100%{
+        transform: scaleX(1);
+    transform-origin: bottom left;
+    }
+}
+@keyframes stream-element-appear {
+    0%{
+        transform:translate(0,50%) scale(85%,85%);
+        opacity:0;
+    }
+    100%{
+        transform:translate(0,0) scale(100%,100%);
+        opacity:1;
+    }
+}
+
+.experience-time{
+    color: var(--font-color);
+    opacity:1;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 500;
+}
+
+b{
+    font-weight:500;
+}
+a{
+    font-weight:300;
+    color:#0000FF;
+    text-decoration: none;
+}
+
+#projects-view{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:0;
+    padding:0;
+    pointer-events: none;
+    transition:transform 0.5s ease;
+    transform:translateX(120vw);
+}
+
+._projectsView #projects-view{
+    transform:translateX(0vw);
+}

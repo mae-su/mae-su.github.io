@@ -14,18 +14,23 @@
 :root{
   --highlightGradient:linear-gradient(to right, 
   #FF000000,
-  #FF0000, /* red */
-  #FF7F00, /* orange */
-  #FFFF00, /* yellow */
-  #00FF00, /* green */
-  #0000FF, /* blue */
+  #FF0000,
+  #FF7F00,
+  #FFFF00,
+  #00FF00,
+  #0000FF,
   #4B008200
 );
 }
 
 
 body {
+<<<<<<< Updated upstream
     background:url(./bg.webp) no-repeat;
+=======
+    background:url(./bg.webp) no-repeat center;
+    background-attachment: fixed;
+>>>>>>> Stashed changes
     background-size: cover;
     overflow: hidden;
     font-family: 'Roboto';

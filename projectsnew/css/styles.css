@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+html{
+    pointer-events: none;
+}
+/* styles.css laods in the essential styles */
+body.dark-mode{
+    background-color: rgb(12,12,12);
+}
+.dark-mode #banner{
+    mix-blend-mode:lighten;
+    color:white;
+}
+.dark-mode #blue-highlight{
+    text-shadow:
+    0px 0px 10px #0000FF;
+}
+
+.dark-mode #blue-highlight:hover{
+    cursor:pointer;
+    text-shadow:
+    0px 0px 10px #0000FF,
+    4px -4px 0px #0000FF99,
+    10px -10px 0px #0000FF44;
+}
+/* 
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Flex', sans-serif; */
+
+:root{
+    --font-color:#121212;
+    --backdrop-color:#2c2c2c48;
+}
+
+.dark-mode{
+    --font-color:#FFFFFF;
+    --backdrop-color:#5e5e5e;
+}
+
+body{
+    pointer-events: all;
+    transition:background-color 0.5s ease; /*dev*/
+    background-color: rgb(243,243,243);
+    width:100vw;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#main-view{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:0;
+    padding:0;
+    transition:transform 0.5s ease;
+    transform:translateX(0);
+}
+
+._projectsView #main-view{
+    transform:translateX(-120vw);
+}
+
+._projectsView #projects-button{
+    right: calc(50vw);
+    transform:translateX(50%)
+}
+._preMainScreen #projects-button{
+    opacity:0;
+}
+
+#projects-button{
+    position:absolute;
+    top:0;
+    opacity:1;
+    right:0;
+    margin:1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    font-size:2rem;
+    color:var(--font-color);
+    cursor:pointer;
+    transition:right 0.5s ease, transform 0.5s ease, opacity 0.25s;
+}
+
+#projects-button::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    top:calc(1em+1px);
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0000FF;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
+
+#projects-button:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#banner{
+    pointer-events: all;
+    width:90vw;
+    position:absolute;   
+    color:#333333;
+    animation: banner-anim 6s ease;
+    top:30%;
+    left:50%;
+    transition: all 0.4s ease;
+    text-align: center;
+    transform:translate(-50%,-50%);
+    font-family: 'Roboto', sans-serif;
+    font-size:5em;
+    font-weight:100;
+    mix-blend-mode:darken;
+}
+
+#blue-highlight{
+    transition:text-shadow 0.375s ease; /*dev*/
+    text-shadow:
+    0px 0px 5px #0000FF;
+    font-weight:300;
+}
+
+@keyframes banner-anim {
+    0%{
+        transform:translate(100vw,-50%) scale(300%,200%);
+        color:#292929;
+        opacity:1;
+        top:50%;
+    }
+    16.6%{
+        transform:translate(-55vw,-50%) scale(300%,300%);
+        color:#292929;
+        opacity:1;
+        top:50%;
+    }
+   
+    19.967%{
+        transform:translate(-55vw,-50%) scale(300%,300%);
+        opacity:1;
+        color:#292929;
+        top:50%;
+    }
+    20%{
+        transform:translate(-100vw,-50%) scale(200%,66%);
+        opacity:1;
+        top:50%;
+        color:var(--font-color);
+        mix-blend-mode:normal;
+    }
+    28.333%{
+        transform:translate(-50%,-50%) scale(100%,100%);
+        opacity:1;
+        mix-blend-mode:normal;
+    }
+    50%{
+        opacity:1;
+        mix-blend-mode:normal;
+    }
+    84%{
+        top:50%;
+    }
+    92%{
+        top:30%;
+    }
+}
+
+#slogan{
+    position:relative;
+    font-family: 'Roboto', sans-serif;
+    font-size:1em;
+    color:var(--font-color);
+    font-weight:300;
+    display:inline-block;
+    transform:translateX(-3em);
+    opacity:0;
+    animation:slogan-slide-out-anim 1s ease;
+    animation-delay:3.5s;
+    animation-fill-mode: both;
+    text-align:left;
+}
+
+#banner-midline{
+    display:inline;
+    position:relative;
+    animation:banner-midline-anim 1s ease;
+    animation-delay:4s;
+    animation-fill-mode:both;
+
+}
+#slogan-text{
+    font-size:0.33em;
+    display:inline-block;
+}
+@keyframes banner-midline-anim{
+    0%{
+        opacity:0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    100%{
+        opacity:1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes slogan-slide-out-anim{
+    0%{
+        transform:translateX(-3em);
+        opacity:0;
+    }
+    100%{
+        transform:translateX(0);
+        opacity:1;
+    }
+}
+
+
