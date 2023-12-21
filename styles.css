@@ -25,12 +25,8 @@
 
 
 body {
-<<<<<<< Updated upstream
     background:url(./bg.webp) no-repeat;
-=======
-    background:url(./bg.webp) no-repeat center;
     background-attachment: fixed;
->>>>>>> Stashed changes
     background-size: cover;
     overflow: hidden;
     font-family: 'Roboto';
