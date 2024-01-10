@@ -1,0 +1,224 @@
+@import url('./Univa-Nova/stylesheet.css');
+
+:root {
+    --black: #141414;
+    --white: #EEEEEE;
+    --cream: #ebd49b;
+    --maered: #ff0000;
+    --navigationheight: 35%;
+    --nodecolor: #FFF;
+}
+
+.bg {
+    position: absolute;
+
+    background-attachment: fixed;
+    background-size: cover;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+    
+}
+
+#bg1 {
+    
+    background-size: cover;
+    opacity:0;
+    z-index: -2;
+    
+}
+
+
+@keyframes opacity-reveal {
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+#bg2 {
+    background: url('./backgrounds/car.webp') fixed;
+    background-size: cover;
+    opacity:0;
+    z-index: -3;
+}
+body {
+    background-color: var(--black);
+    transition: background-color 0.5s;
+}
+
+body.light-mode {
+    background-color: var(--white);
+}
+
+* {
+    font-family: 'Univa Nova';
+}
+
+#banner {
+    position: absolute;
+    pointer-events: all;
+    width: max-content;
+    top: var(--navigationheight);
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-family: 'Univa Nova', sans-serif;
+    font-size: 5em;
+    font-weight: 100;
+    mix-blend-mode: lighten;
+    color: white;
+    padding-left: 1rem
+}
+
+/*linear-gradient(130deg, #0000FF, #FF00FF 50%, #f00 90.05%);*/
+#banner::after {
+    border-radius: 9999px;
+    height: 0.25rem;
+    position: absolute;
+    left: 0%;
+    bottom: 5%;
+    right: 0%;
+    content: '';
+    background: #f00;
+    box-shadow: 0px 0px 10px #F00;
+    animation: banner-underline 0.5s both;
+    animation-delay: 0.5s;
+}
+
+
+@keyframes banner-underline {
+    0% {
+        width: 0%;
+        left: 0%;
+        box-shadow: 0px 0px 10px #FFF, 0px 0px 10px #F00;
+    }
+
+    50% {
+        width: 100%;
+        left: 0%;
+    }
+
+    100% {
+        left: 60%;
+        width: 40%;
+        box-shadow: 0px -2px 10px #F00;
+    }
+}
+
+@keyframes banner-underline-section {
+    0% {
+        left: 60%;
+        width: 40%;
+        box-shadow: 0px 0px 10px #F00;
+    }
+
+    5% {
+        box-shadow: 0px 0px 10px #FFF, 0px 0px 10px #F00;
+    }
+
+    50% {
+        left: 5%;
+        width: 95%;
+    }
+
+    100% {
+        left: 5%;
+        background-color: white;
+        width: 40%;
+        box-shadow: 0px -2px 10px #F000;
+    }
+}
+
+.pageOpen #banner {
+    animation: teleport-banner 0.5s linear both;
+}
+
+.pageOpen #banner::after {
+    animation: banner-underline-section 0.4s linear both;
+    animation-delay: 1s;
+
+}
+
+@keyframes teleport-banner {
+    0% {
+        opacity: 1;
+    }
+
+    40% {
+        top: var(--navigationheight);
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+
+    60% {
+        top: 0%;
+        left: 0%;
+        text-align: center;
+        transform: translate(0%, 0%);
+        opacity: 0;
+
+    }
+
+    100% {
+        top: 0%;
+        left: 0%;
+        text-align: center;
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
+}
+
+#navigation {
+    position: absolute;
+    pointer-events: all;
+    width: max-content;
+    bottom: 0%;
+    right: 0%;
+    height: max-content;
+    text-align: left;
+    font-size: 0;
+    font-family: 'Univa Nova', sans-serif;
+    transition: opacity 0.5s ease;
+    animation:opacity-reveal 1s both;
+    animation-delay:1.5s;
+}
+.navbtn {
+    transition: text-shadow 0.5s ease;
+    position: relative;
+    font-size: 3rem;
+    padding: 0.6rem;
+    padding-left: 1rem;
+    font-weight: 400;
+    display: inline-block;
+    text-shadow: 10px -10px 0px #FFF0, 20px -20px 0px #FFF0;
+}
+
+.navbtn:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 2px var(--nodecolor), 0px 0px 2px var(--nodecolor);
+}
+
+.pageOpen #navigation {
+    opacity: 0;
+}
+
+#projectsbtn {
+    border-top-left-radius: 0.5em;
+    background: var(--maered);
+    color: var(--white);
+}
+
+#aboutbtn {
+    --nodecolor: var(--cream);
+    background: var(--black);
+    color: var(--cream);
+}
+

@@ -1,0 +1,14 @@
+[{  "url":"./backgrounds/car.webp",
+    "name":"twilight velocity",
+    "alt":"Raindrops on a stone bench in the foreground as a Tesla car passes by at a high speed in the background.",
+    "description":"a car speeds by a rain covered bench.",
+    "setting":"Milburn, NJ",
+    "contrast":"dark"
+},
+{  "url":"./backgrounds/mk2_intake.webp",
+    "name":"hinged angular intake",
+    "alt":"A geared robotic mechanism sitting in a brightly lit background with drops around it",
+    "description":"the most advanced assembly i've made.",
+    "setting":"Milburn, NJ",
+    "contrast":"light"
+}]
