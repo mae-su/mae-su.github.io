@@ -1,4 +1,4 @@
-const bgDelay = 15000
+const bgDelay = 12000
 
 function delay(time) {
   return new Promise(resolve => setTimeout(resolve, time));
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 }, false);
 
 async function loadBGDetails() {
-  const response = await fetch('./backgrounds/details.json');
+  const response = await fetch('./css/backgrounds/details.json');
   return await response.json();
 }
 
@@ -72,21 +72,15 @@ async function changeBackground() {
   const details = await loadBGDetails();
   const nextDetails = details[(currentBackground - 1) % details.length];
 
-  /// Preload the next image
-
   const img = new Image();
   img.onload = function () {
-    // Set the next background image
     nextBGDiv = document.getElementById(`bg${nextBackground}`)
     currentBGDiv = document.getElementById(`bg${currentBackground}`)
-
     nextBGDiv.style.backgroundImage = `url(${nextDetails.url})`;
 
-    // Fade in next background and fade out current background
     nextBGDiv.style.opacity = 1;
     currentBGDiv.style.opacity = 0;
 
-    // Update the current background
     currentBackground = nextBackground;
     delay(bgDelay).then(() => changeBackground())
   }

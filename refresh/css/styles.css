@@ -11,42 +11,38 @@
 
 .bg {
     position: absolute;
-
     background-attachment: fixed;
     background-size: cover;
-
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: -1;
     transition: opacity 0.5s ease;
-    
 }
 
 #bg1 {
-    
     background-size: cover;
-    opacity:0;
+    opacity: 0;
     z-index: -2;
-    
 }
-
 
 @keyframes opacity-reveal {
-    0%{
-        opacity:0;
+    0% {
+        opacity: 0;
     }
-    100%{
-        opacity:1;
+    100% {
+        opacity: 1;
     }
 }
+
 #bg2 {
     background: url('./backgrounds/car.webp') fixed;
     background-size: cover;
-    opacity:0;
+    opacity: 0;
     z-index: -3;
 }
+
 body {
     background-color: var(--black);
     transition: background-color 0.5s;
@@ -71,7 +67,7 @@ body.light-mode {
     font-family: 'Univa Nova', sans-serif;
     font-size: 5em;
     font-weight: 100;
-    mix-blend-mode: lighten;
+    /* mix-blend-mode: lighten; */
     color: white;
     padding-left: 1rem
 }
@@ -187,9 +183,10 @@ body.light-mode {
     font-size: 0;
     font-family: 'Univa Nova', sans-serif;
     transition: opacity 0.5s ease;
-    animation:opacity-reveal 1s both;
-    animation-delay:1.5s;
+    animation: opacity-reveal 1s both;
+    animation-delay: 1.5s;
 }
+
 .navbtn {
     transition: text-shadow 0.5s ease;
     position: relative;
@@ -221,4 +218,3 @@ body.light-mode {
     background: var(--black);
     color: var(--cream);
 }
-
