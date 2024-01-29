@@ -55,7 +55,10 @@ document.addEventListener('DOMContentLoaded', async function () {
   setMenuSize("30vmin");
   document.documentElement.classList.add('interactable')
   const bg2div = document.getElementById('bg2');
-  delay(750).then(() => bg2div.style.opacity = 1)
+  delay(750).then(() => {
+    bg2div.style.opacity = 1;
+    document.getElementById(`bgDetails`).style.opacity = 1
+  })
   changeBackground()
 }, false);
 
@@ -65,23 +68,34 @@ async function loadBGDetails() {
 }
 
 let currentBackground = 1;
-
+let currentImage = 0
 async function changeBackground() {
   const nextBackground = currentBackground === 1 ? 2 : 1;
-
   const details = await loadBGDetails();
-  const nextDetails = details[(currentBackground - 1) % details.length];
-
+  if (currentImage === details.length){
+    currentImage= 0;
+  }
+  const nextDetails = details[currentImage];
+  
   const img = new Image();
   img.onload = function () {
+    
     nextBGDiv = document.getElementById(`bg${nextBackground}`)
     currentBGDiv = document.getElementById(`bg${currentBackground}`)
     nextBGDiv.style.backgroundImage = `url(${nextDetails.url})`;
 
     nextBGDiv.style.opacity = 1;
     currentBGDiv.style.opacity = 0;
-
     currentBackground = nextBackground;
+
+    titleDiv = document.getElementById(`bgTitle`)
+    titleDiv.textContent = nextDetails.name;
+    descDiv = document.getElementById(`bgDesc`)
+    descDiv.textContent = nextDetails.description;
+    settingDiv = document.getElementById(`bgSetting`)
+    settingDiv.textContent = nextDetails.setting;    
+
+    currentImage +=1
     delay(bgDelay).then(() => changeBackground())
   }
   img.src = nextDetails.url;

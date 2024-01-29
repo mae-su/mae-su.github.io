@@ -2,19 +2,19 @@
     "name":"twilight velocity",
     "alt":"Raindrops on a stone bench in the foreground as a Tesla car passes by at a high speed in the background.",
     "description":"a car speeds by a rain covered bench.",
-    "setting":"Milburn, NJ",
+    "setting":"Downtown Milburn, NJ",
     "contrast":"dark"
 },
 {  "url":"./css/backgrounds/destination.webp",
     "name":"destination",
     "alt":"Tilted view of a distant highway bridge shimmering over water. There are stars in a blue-tinted sky above. A bike handlebar protrudes from the right side of the photo.",
-    "description":"the most advanced assembly i've made.",
-    "setting":"Milburn, NJ",
+    "description":"stars above an overpass.",
+    "setting":"Rochester, NY",
     "contrast":"dark"
 },{  "url":"./css/backgrounds/mk2_intake.webp",
-    "name":"hinged angular intake",
-    "alt":"A geared robotic mechanism sitting in a brightly lit background with drops around it",
+    "name":"angular intake",
+    "alt":"A geared robotic mechanism sitting in a brightly lit environment with drops around it",
     "description":"the most advanced assembly i've made.",
-    "setting":"Milburn, NJ",
+    "setting":"Milburn, NJ - Millburn Robotics",
     "contrast":"light"
 }]

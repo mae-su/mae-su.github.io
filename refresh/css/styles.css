@@ -172,37 +172,6 @@ body.light-mode {
     }
 }
 
-#navigation {
-    position: absolute;
-    pointer-events: all;
-    width: max-content;
-    bottom: 0%;
-    right: 0%;
-    height: max-content;
-    text-align: left;
-    font-size: 0;
-    font-family: 'Univa Nova', sans-serif;
-    transition: opacity 0.5s ease;
-    animation: opacity-reveal 1s both;
-    animation-delay: 1.5s;
-}
-
-.navbtn {
-    transition: text-shadow 0.5s ease;
-    position: relative;
-    font-size: 3rem;
-    padding: 0.6rem;
-    padding-left: 1rem;
-    font-weight: 400;
-    display: inline-block;
-    text-shadow: 10px -10px 0px #FFF0, 20px -20px 0px #FFF0;
-}
-
-.navbtn:hover {
-    cursor: pointer;
-    text-shadow: 0px 0px 2px var(--nodecolor), 0px 0px 2px var(--nodecolor);
-}
-
 .pageOpen #navigation {
     opacity: 0;
 }
@@ -217,4 +186,27 @@ body.light-mode {
     --nodecolor: var(--cream);
     background: var(--black);
     color: var(--cream);
+}
+#bgDetails{
+    transition:all 0.5s ease;
+    position:absolute;
+    color: var(--white);
+    left: 9.5%;
+    top:73%;
+    text-align: left;
+    font-size: 5rem;
+    opacity:0;
+}
+
+#bgTitle{
+    font-family: 'Univa Nova Hairline';
+}
+
+#bgDesc{
+    font-family: 'Univa Nova';
+    font-size: 0.5em;
+}
+#bgSetting{
+    font-family: 'Univa Nova';
+    font-size: 0.25em;
 }
