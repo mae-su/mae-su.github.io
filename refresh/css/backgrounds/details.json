@@ -1,20 +1,31 @@
 [{  "url":"./css/backgrounds/car.webp",
     "name":"twilight velocity",
-    "alt":"Raindrops on a stone bench in the foreground as a Tesla car passes by at a high speed in the background.",
-    "description":"a car speeds by a rain covered bench.",
+    "alt":"Raindrops on a glistening stone bench in the foreground as a Tesla car passes by at a high speed in the background.",
+    "description":"a car speeds past a rain covered bench.",
     "setting":"Downtown Milburn, NJ",
-    "contrast":"dark"
+    "alignment":"center"
+    ,"contrast":"dark"
 },
 {  "url":"./css/backgrounds/destination.webp",
     "name":"destination",
     "alt":"Tilted view of a distant highway bridge shimmering over water. There are stars in a blue-tinted sky above. A bike handlebar protrudes from the right side of the photo.",
     "description":"stars above an overpass.",
     "setting":"Rochester, NY",
+    "alignment":"center",
     "contrast":"dark"
 },{  "url":"./css/backgrounds/mk2_intake.webp",
     "name":"angular intake",
     "alt":"A geared robotic mechanism sitting in a brightly lit environment with drops around it",
     "description":"the most advanced assembly i've made.",
-    "setting":"Milburn, NJ - Millburn Robotics",
+    "setting":"Millburn Robotics",
+    "alignment":"center",
+    "contrast":"light"
+},
+{  "url":"./css/backgrounds/mmrk.webp",
+    "name":"kiosk v2",
+    "alt":"A white touchscreen kiosk device with a gold-trimmed top suctioned to a glass window. To the right of it, next to an RFID card reader, is a card-sized device it connects to.",
+    "description":"a special daily driver",
+    "setting":"Millburn High School",
+    "alignment":"center",
     "contrast":"light"
 }]

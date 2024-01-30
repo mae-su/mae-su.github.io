@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       }, 125);
     });
   }
-  setMenuSize("30vmin");
+  
   document.documentElement.classList.add('interactable')
   const bg2div = document.getElementById('bg2');
   delay(750).then(() => {
@@ -83,6 +83,7 @@ async function changeBackground() {
     nextBGDiv = document.getElementById(`bg${nextBackground}`)
     currentBGDiv = document.getElementById(`bg${currentBackground}`)
     nextBGDiv.style.backgroundImage = `url(${nextDetails.url})`;
+    nextBGDiv
 
     nextBGDiv.style.opacity = 1;
     currentBGDiv.style.opacity = 0;
