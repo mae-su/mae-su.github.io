@@ -24,8 +24,8 @@
 {  "url":"./css/backgrounds/mmrk.webp",
     "name":"kiosk v2",
     "alt":"A white touchscreen kiosk device with a gold-trimmed top suctioned to a glass window. To the right of it, next to an RFID card reader, is a card-sized device it connects to.",
-    "description":"a special daily driver",
+    "description":"a high end security solution.",
     "setting":"Millburn High School",
-    "alignment":"center",
+    "alignment":"bottom",
     "contrast":"light"
 }]

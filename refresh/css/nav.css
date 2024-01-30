@@ -37,7 +37,6 @@
 ._projectsMenu .nav{
   transition:all 1s cubic-bezier(.4, 0, .07, 1.1);
   transition-delay: 1.5s;
-  
 }
 
 ._menu .bgoverlay{
@@ -85,9 +84,18 @@
   position:absolute;
 }
 
-.interactable .navLayer{
-  cursor:pointer;
+.subPageOpen #top{
+  transition: clip-path 0.7s cubic-bezier(.82,-0.5,.07,.82);
+  pointer-events: none;
+  clip-path: polygon(100% 100%, 100% 100vh, 100vw 100%);
 }
+
+.subPageOpen #mid{
+  transition: clip-path 0.7s cubic-bezier(.82,-0.5,.07,.82);
+  pointer-events: none;
+  clip-path: polygon(100% 100%, 100% 100vh, 100vw 100%);
+}
+
 
 #top{
   clip-path: polygon(100% 100%, 100% calc(100vh - var(--trianglesize)), calc(100vw - var(--trianglesize)) 100%);
@@ -95,7 +103,7 @@
   z-index:calc(var(--nav-z-offset) + 4);
 }
 
-.interactable #top:hover{
+#top:hover{
   transition: clip-path 0.25s cubic-bezier(.3,0,.07,.82);
   clip-path: polygon(100% 100%, 100% calc(100vh - var(--trianglesize) - 1vh), calc(100vw - var(--trianglesize) - 1vh) 100%);
 }
@@ -104,37 +112,6 @@
   clip-path: polygon(100% 100%, 100% calc(100vh - var(--trianglesize) - 10.5vh), calc(100vw - var(--trianglesize) - 10.5vh) 100%);
   background-color: var(--maered);
   z-index:calc(var(--nav-z-offset) +  2);
-}
-
-.interactable #mid:hover{
-  transition: clip-path 0.25s cubic-bezier(.3,0,.07,.82);
-  clip-path: polygon(100% 100%, 100% calc(100vh - var(--trianglesize) - 11.5vh), calc(100vw - var(--trianglesize) - 11.5vh) 100%);
-}
-
-/* projects menu transitions */
-
-._projectsMenu #top{
-  transition: clip-path 0.7s cubic-bezier(.82,-0.5,.07,.82);
-  clip-path: polygon(100% 100%, 100% 100vh, 100vw 100%);
-}
-
-._projectsMenu #mid{
-  transition: clip-path 1s cubic-bezier(.82,-0.8,.07,.82);
-  transition-delay: 0.3s;
-  clip-path: polygon(100% 100%, 100% -100vw, -100vh 100%)
-}
-
-/* site menu transitions */
-
-._aboutMenu #mid{
-  transition: clip-path 0.7s cubic-bezier(.82,-0.4,.07,.82);
-  clip-path: polygon(100% 100%, 100% 100vh, 100vw 100%);
-}
-
-._aboutMenu #top{
-  transition: clip-path 1s cubic-bezier(.82,-0.8,.07,.82);
-  transition-delay: 0.3s;
-  clip-path: polygon(100% 100%, 100% -100vw, -100vh 100%)
 }
 
 .resizing .nav {

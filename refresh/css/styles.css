@@ -22,7 +22,7 @@
 }
 
 #bg1 {
-    background-size: cover;
+
     opacity: 0;
     z-index: -2;
 }
@@ -38,7 +38,6 @@
 
 #bg2 {
     background: url('./backgrounds/car.webp') fixed;
-    background-size: cover;
     opacity: 0;
     z-index: -3;
 }
@@ -132,11 +131,11 @@ body.light-mode {
     }
 }
 
-.pageOpen #banner {
+.subPageOpen #banner {
     animation: teleport-banner 0.5s linear both;
 }
 
-.pageOpen #banner::after {
+.subPageOpen #banner::after {
     animation: banner-underline-section 0.4s linear both;
     animation-delay: 1s;
 
@@ -173,7 +172,7 @@ body.light-mode {
     }
 }
 
-.pageOpen #navigation {
+.subPageOpen #navigation {
     opacity: 0;
 }
 
@@ -197,15 +196,19 @@ body.light-mode {
     text-align: left;
     font-size: 5rem;
     opacity:0;
+    text-shadow: 0px 0px 5px black ;
 }
 
 #bgTitle{
+    
     font-family: 'Univa Nova Hairline';
+    
 }
 
 #bgDesc{
     font-family: 'Univa Nova';
     font-size: 0.5em;
+    
 }
 #bgSetting{
     font-family: 'Univa Nova';

@@ -12,10 +12,15 @@ function rmBodyClass(name) {
   document.body.classList.remove(name)
 }
 
-function setMenuSize(size){
+function setMenuSize(size) {
   var i = document.documentElement.style.getPropertyValue("--trianglesize");
-  document.documentElement.style.setProperty('--trianglesize',size)
-  return i;
+  document.documentElement.style.setProperty('--trianglesize', size)
+}
+
+function goToSubPage(page) {
+  addBodyClass('subPageOpen');
+  // setMenuSize('-10vmin');
+  addBodyClass(`sp_${page}`);
 }
 
 document.addEventListener('keydown', function (event) {
@@ -41,9 +46,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     rmBodyClass('light-mode')
     console.log('Dark mode preference preferred.')
   }
-  if(!isFirefox){
+  if (!isFirefox) {
     let resizeTimer;
-  
+
     window.addEventListener("resize", () => { //source: https://css-tricks.com/stop-animations-during-window-resizing/
       document.documentElement.classList.add("resizing");
       clearTimeout(resizeTimer);
@@ -52,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       }, 125);
     });
   }
-  
+
   document.documentElement.classList.add('interactable')
   const bg2div = document.getElementById('bg2');
   delay(750).then(() => {
@@ -68,22 +73,25 @@ async function loadBGDetails() {
 }
 
 let currentBackground = 1;
-let currentImage = 0
+let currentImage = 0;
 async function changeBackground() {
   const nextBackground = currentBackground === 1 ? 2 : 1;
   const details = await loadBGDetails();
-  if (currentImage === details.length){
-    currentImage= 0;
+  if (currentImage === details.length) {
+    currentImage = 0;
   }
   const nextDetails = details[currentImage];
-  
+
   const img = new Image();
   img.onload = function () {
-    
+
     nextBGDiv = document.getElementById(`bg${nextBackground}`)
     currentBGDiv = document.getElementById(`bg${currentBackground}`)
+
+    nextBGDiv.style.backgroundPosition = nextDetails.alignment
+    nextBGDiv.style.backgroundSize = "cover"
     nextBGDiv.style.backgroundImage = `url(${nextDetails.url})`;
-    nextBGDiv
+
 
     nextBGDiv.style.opacity = 1;
     currentBGDiv.style.opacity = 0;
@@ -94,9 +102,9 @@ async function changeBackground() {
     descDiv = document.getElementById(`bgDesc`)
     descDiv.textContent = nextDetails.description;
     settingDiv = document.getElementById(`bgSetting`)
-    settingDiv.textContent = nextDetails.setting;    
+    settingDiv.textContent = nextDetails.setting;
 
-    currentImage +=1
+    currentImage += 1
     delay(bgDelay).then(() => changeBackground())
   }
   img.src = nextDetails.url;
