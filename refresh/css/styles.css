@@ -197,6 +197,7 @@ body.light-mode {
     font-size: 5rem;
     opacity:0;
     text-shadow: 0px 0px 5px black ;
+    right:calc(var(--nav-size) / 2);
 }
 
 #bgTitle{
@@ -213,4 +214,19 @@ body.light-mode {
 #bgSetting{
     font-family: 'Univa Nova';
     font-size: 0.25em;
+}
+@media (max-width: 800px), (max-aspect-ratio: 14/16) { /*de-yassifies the site for mobile users*/
+    #bgDetails{
+        top:calc(66.5%);
+      }
+  }
+@media (max-width: 600px), (max-aspect-ratio: 11/16) { /*de-yassifies the site for mobile users*/
+  #bgDetails{
+    font-size:4rem;
+    top:60%;
+    right:calc(var(--nav-size) / 3);
+  }
+  #bgSetting{
+    font-size:0.3em;
+  }
 }

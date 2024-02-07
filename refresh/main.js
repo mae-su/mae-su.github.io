@@ -13,8 +13,8 @@ function rmBodyClass(name) {
 }
 
 function setMenuSize(size) {
-  var i = document.documentElement.style.getPropertyValue("--trianglesize");
-  document.documentElement.style.setProperty('--trianglesize', size)
+  var i = document.documentElement.style.getPropertyValue("--nav-size");
+  document.documentElement.style.setProperty('--nav-size', size)
 }
 
 function goToSubPage(page) {
@@ -84,7 +84,6 @@ async function changeBackground() {
 
   const img = new Image();
   img.onload = function () {
-
     nextBGDiv = document.getElementById(`bg${nextBackground}`)
     currentBGDiv = document.getElementById(`bg${currentBackground}`)
 
