@@ -1,5 +1,6 @@
 const bgDelay = 12000
 var navLayers;
+
 function delay(time) {//get elements by child of nav div instead??
   return new Promise(resolve => setTimeout(resolve, time));
 }
@@ -59,7 +60,9 @@ function setMenuSize(size) {
 // }
 
 function applyThemePreference() {
-  
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
   if (localStorage.getItem('darkMode') === 'enabled') {
     rmBodyClass('light-mode')
     console.log('Restored dark mode preference.')
@@ -71,7 +74,7 @@ function applyThemePreference() {
     console.log('Dark mode preference preferred.')
   }
   window.addEventListener('scroll', function () {
-    const scrolledPast90vh = window.scrollY > 0.1 * window.innerHeight;
+    const scrolledPast90vh = window.scrollY > 0.1;
     const navDiv = this.document.getElementById('nav')
     if (scrolledPast90vh) {
       addBodyClass('aboutMe')
