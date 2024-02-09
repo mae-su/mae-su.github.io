@@ -1,10 +1,10 @@
 :root{
-  --nav-size-max:30rem;
+  --nav-size-max:35rem;
   --nav-size: 25rem; /*value overidden by js, for initial before load*/
   --tray-width:4rem;
   --tray-polygon-max:calc((var(--nav-size-max) - var(--nav-size)));
-  --menubuttoncolor:var(--white);
   --nav-z-offset:-3;
+
 }
 
 @keyframes nav-load{
@@ -27,7 +27,7 @@
   opacity:0;
   animation: nav-load 0.5s both;
   animation-delay:1s;
-  user-select: none !important;
+  user-select: none !important;  
 }
 
 .navLayer{
@@ -37,34 +37,74 @@
   height:100%;
   bottom:0;
   right:0;
-
+  --tray-hover-expansion:0rem;
   --tray-offset:0;
-  --tray-outer-point-calc:calc(var(--tray-polygon-max) + (var(--tray-offset) * (var(--tray-width) * sqrt(2))));
-  --tray-inner-point-calc:calc(var(--tray-outer-point-calc) + (var(--tray-width) * sqrt(2)));
+  --tray-outer-point-calc:calc(var(--tray-polygon-max) + (var(--tray-offset) * (var(--tray-width) * sqrt(2))) - var(--tray-hover-expansion));
+  --tray-inner-point-calc:calc(var(--tray-outer-point-calc) + (var(--tray-width) * sqrt(2)) + var(--tray-hover-expansion));
   
   clip-path:polygon(
     /*tr outer*/ 100% var(--tray-outer-point-calc), 
     /*tr inner*/ 100% var(--tray-inner-point-calc), 
     /*bl inner */ var(--tray-inner-point-calc) 100%,
     /*bl outer */var(--tray-outer-point-calc) 100% );
+  
 }
+.navLayer.divider{
+  --divider-width:0.1rem;
+  z-index:5;
+  --tray-width:0rem;
+  --tray-inner-point-calc:calc(var(--tray-outer-point-calc) + (var(--divider-width) * sqrt(2)));
+}
+/* navigation menu response to about me */
+
+.aboutMe #top{
+  --tray-offset:1;
+  opacity:1;
+  background-color:var(--black);
+}
+
+.aboutMe #low{
+  --tray-offset:2;
+  opacity:1;
+}
+.aboutMe #mid{
+  --tray-offset:2;
+}
+.aboutMe .divider{
+  background-color:var(--cream);
+  transition-delay:0.5s;
+  --tray-width:unset !important;
+}
+.aboutMe .navButton{
+  color:var(--cream);
+}
+.aboutMe .navButton:hover {
+  --tray-hover-expansion:0rem !important;
+text-shadow: 5px -5px 0px var(--cream);
+  
+}
+
 #top{
   background-color:var(--maered);
 }
 #mid{
   background-color:var(--black);
   --tray-offset:1;
+  z-index:1;
+}
+#low{
+  background-color:var(--black);
+  
+  --tray-offset:1;
+  opacity:0;
+  z-index:2;
 }
 
 .navButton{
+  transition:all 0.5s ease;
   position:relative;
   font-size:calc(var(--tray-width) - 1.5rem);
-  color:var(--white);
   text-align:center;
-
-  /* --temp:calc(var(--nav-size) / sqrt(2));
-  top:var(--temp);
-  left:var(--temp);   */
   transform-origin: center;
   transform:translate(-50%, -50%) rotate(-45deg);
   --tray-offset:inherit;
@@ -73,21 +113,33 @@
   --text-offset:calc((var(--text-side-offset) - var(--text-diag-offset)) - var(--nav-size-max));
   right:var(--text-offset);  
   bottom:var(--text-offset);
+  color:var(--white);
 }
 
+.navLayer:hover{
+  --tray-hover-expansion:0.5rem;
+  cursor:pointer;
+}
+
+.dev .navLayer{
+  opacity:0.5;
+}
+.dev .hoverBound polygon{
+  stroke-width:2;
+  mix-blend-mode: difference;
+  stroke:red;
+  fill:none;
+}
 
 .resizing .nav {
   /* opacity:0 !important; */
   transition: opacity 0.2s cubic-bezier(.4,0,.07,.82)!important;
 }
 
-.resizing .navLayer {
-  transition: all 0.5s ease;
-}
-
-.resizing .navButton{
-  transition-delay: none;
-}
 @media (max-width: 600px), (max-aspect-ratio: 11/16) { /*de-yassifies the site for mobile users*/
-  
+  :root{
+    --tray-width:6.5rem;
+    
+    --nav-size:35rem;
+  }
 }

@@ -28,9 +28,9 @@ body {
     background:url(./bg.webp) no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    overflow: hidden;
     font-family: 'Roboto';
     z-index: 0;
+    
 }
 
 .modernBlack{

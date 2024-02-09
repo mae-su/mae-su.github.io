@@ -1,0 +1,16 @@
+/* width */
+
+html{
+    scroll-snap-type: y mandatory;
+}
+::-webkit-scrollbar{
+    visibility:hidden;
+    width:0;
+}
+#bg1{
+    scroll-snap-align: start;
+}
+#stretcher{
+    position:relative;height:120vh; top:80vh;
+    scroll-snap-align: end;
+}

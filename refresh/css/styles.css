@@ -1,11 +1,12 @@
 @import url('./Univa-Nova/stylesheet.css');
+@import url('scroll.css');
 
 :root {
     --black: #141414;
     --white: #EEEEEE;
-    --cream: #ebd49b;
+    --cream: #d8af8d;
     --maered: #ff0000;
-    --navigationheight: 35%;
+    --bannerheight: 35%;
     --nodecolor: #FFF;
 }
 
@@ -51,7 +52,7 @@ body.light-mode {
     background-color: var(--white);
 }
 
-* {
+body {
     font-family: 'Univa Nova';
 }
 
@@ -59,7 +60,7 @@ body.light-mode {
     position: absolute;
     pointer-events: all;
     width: max-content;
-    top: var(--navigationheight);
+    top: var(--bannerheight);
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
@@ -147,7 +148,7 @@ body.light-mode {
     }
 
     40% {
-        top: var(--navigationheight);
+        top: var(--bannerheight);
         left: 50%;
         text-align: center;
         transform: translate(-50%, -50%);
@@ -201,15 +202,12 @@ body.light-mode {
 }
 
 #bgTitle{
-    
     font-family: 'Univa Nova Hairline';
-    
 }
 
 #bgDesc{
     font-family: 'Univa Nova';
     font-size: 0.5em;
-    
 }
 #bgSetting{
     font-family: 'Univa Nova';
@@ -219,14 +217,24 @@ body.light-mode {
     #bgDetails{
         top:calc(66.5%);
       }
+      
   }
+  
 @media (max-width: 600px), (max-aspect-ratio: 11/16) { /*de-yassifies the site for mobile users*/
-  #bgDetails{
-    font-size:4rem;
+    #banner{
+        font-size: 8em;
+    }
+    #bgDetails{
+    font-size:7rem;
     top:60%;
     right:calc(var(--nav-size) / 3);
   }
+    #bgTitle{
+        font-weight:300;
+        font-style:normal;
+    }
   #bgSetting{
     font-size:0.3em;
   }
+  
 }

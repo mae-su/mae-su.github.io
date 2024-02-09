@@ -1,9 +1,8 @@
 const bgDelay = 12000
-
-function delay(time) {
+var navLayers;
+function delay(time) {//get elements by child of nav div instead??
   return new Promise(resolve => setTimeout(resolve, time));
 }
-
 function addBodyClass(name) {
   document.body.classList.add(name)
 }
@@ -17,9 +16,76 @@ function setMenuSize(size) {
   document.documentElement.style.setProperty('--nav-size', size)
 }
 
+// function repaintMenu() {// paints an SVG polygon over each of the menu's hover regions
+//   var i = document.documentElement.style.getPropertyValue("--tray-outer-point-calc");
+//   const layers = ['top','mid']
+//   console.log(layers)
+  
+//   for (let i = 0; i < layers.length; i++) {
+
+//       const computedStyle = window.getComputedStyle(document.getElementById(layers[i]));
+//       console.log(computedStyle.getPropertyValue('clip-path'))
+//       const hoverPointsRaw = computedStyle.getPropertyValue('clip-path').match(/(?:[-+]?(?:\d*\.\d+|\d+)(?:%|px)?)/g);
+
+//       if (hoverPointsRaw !== null) {
+//         console.log(hoverPointsRaw);
+//         let hoverPoints = []
+//         const constant = 4.8;
+        
+//         for (let term of hoverPointsRaw) {
+//           if (term.includes('px')) {
+//             const value = parseFloat(term);
+//             hoverPoints.push(value);
+//           } else if (term.includes('%')) {
+//             const value = parseFloat(term.replace('%', '')) * constant;
+//             hoverPoints.push(value);
+//           }
+//         }
+//         console.log(hoverPoints)
+//         svgNS = "http://www.w3.org/2000/svg"
+//         var hoverSVG = document.createElementNS(svgNS, "svg");
+//         hoverSVG.setAttribute("width", "100%");
+//         hoverSVG.setAttribute("height", "100%");
+
+//         const hoverPoly = document.createElementNS(svgNS, "polygon");
+//         hoverPoly.setAttribute("points", hoverPoints.join(" "));
+//         hoverSVG.appendChild(hoverPoly);
+        
+//         hoverSVG.classList.add('hoverBound')
+//         document.getElementById("nav").appendChild(hoverSVG);
+//       }
+      
+//   }
+// }
+
+function applyThemePreference() {
+  
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    rmBodyClass('light-mode')
+    console.log('Restored dark mode preference.')
+  } else if (localStorage.getItem('darkMode') === 'disabled') {
+    addBodyClass('light-mode');
+    console.log('Restored light mode preference.')
+  } else if (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    rmBodyClass('light-mode')
+    console.log('Dark mode preference preferred.')
+  }
+  window.addEventListener('scroll', function () {
+    const scrolledPast90vh = window.scrollY > 0.1 * window.innerHeight;
+    const navDiv = this.document.getElementById('nav')
+    if (scrolledPast90vh) {
+      addBodyClass('aboutMe')
+      addBodyClass('pageOpen')
+      this.document.getElementById('stretcher').scrollIntoView({behavior: 'smooth'});
+    } else{
+      rmBodyClass('aboutMe')
+      rmBodyClass('pageOpen')
+    }
+  });
+}
+
 function goToSubPage(page) {
   addBodyClass('subPageOpen');
-  // setMenuSize('-10vmin');
   addBodyClass(`sp_${page}`);
 }
 
@@ -35,30 +101,18 @@ document.addEventListener('keydown', function (event) {
 });
 
 document.addEventListener('DOMContentLoaded', async function () {
-  const isFirefox = !navigator.userAgent.toLowerCase().includes('firefox');
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    rmBodyClass('light-mode')
-    console.log('Restored dark mode preference.')
-  } else if (localStorage.getItem('darkMode') === 'disabled') {
-    addBodyClass('light-mode');
-    console.log('Restored light mode preference.')
-  } else if (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    rmBodyClass('light-mode')
-    console.log('Dark mode preference preferred.')
-  }
-  if (!isFirefox) {
-    let resizeTimer;
+  applyThemePreference()
+  // requestIdleCallback(repaintMenu)
 
-    window.addEventListener("resize", () => { //source: https://css-tricks.com/stop-animations-during-window-resizing/
-      document.documentElement.classList.add("resizing");
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        document.documentElement.classList.remove("resizing");
-      }, 125);
-    });
-  }
+  let resizeTimer;
+  window.addEventListener("resize", () => { //source: https://css-tricks.com/stop-animations-during-window-resizing/
+    document.documentElement.classList.add("resizing");
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      document.documentElement.classList.remove("resizing");
+    }, 125);
+  });
 
-  document.documentElement.classList.add('interactable')
   const bg2div = document.getElementById('bg2');
   delay(750).then(() => {
     bg2div.style.opacity = 1;

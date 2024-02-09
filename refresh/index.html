@@ -7,22 +7,31 @@
         <link href="./css/nav.css" rel="stylesheet">
         <title>mae.red - beta</title>
     </head>
-    <body style="background-color:#111111">
+    <body style="background-color:#111111" class="scrollpage">
         
         <div id="banner">
             <span>mae</span><span style="color:red;font-weight:300">.red</span>
             <span id="label"></span>
         </div>
-        <div id="curtain"></div>
+        <div id="stretcher" style=""></div>
         <div id="bg1" class="bg"></div>
         <div id="bg2" class="bg"></div>
-        <div class="nav" id="nav">
+        <div class="nav" id="nav" >
             <div id="top" class="navLayer" onclick="goToSubPage('projects')">
                 <div class="navButton">projects</div>
             </div>
-            <div id="mid" class="navLayer">
+            <div id="mid" class="navLayer" onclick="document.getElementById('stretcher').scrollIntoView({behavior: 'smooth'});">
                 <div class="navButton">about me</div>
             </div>
+            <div id="low" class="navLayer">
+                <div class="navButton">back</div>
+            </div>
+            <div class="navLayer divider" style="--tray-offset:1;"></div>
+            <div class="navLayer divider" style="--tray-offset:2;"></div>
+            <div class="navLayer divider" style="--tray-offset:3;"></div>
+            <!-- <div id="low" class="navLayer" style="--tray-offset:2;background-color:black;">
+                <div class="navButton">donate</div>
+            </div> -->
             
           </div>
         <div id="bgDetails">
