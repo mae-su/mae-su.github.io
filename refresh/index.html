@@ -5,22 +5,30 @@
         <script src="main.js" ></script>
         <link href="./css/styles.css" rel="stylesheet">
         <link href="./css/nav.css" rel="stylesheet">
+        <link href="./css/debug.css" rel="stylesheet">
         <title>mae.red - beta</title>
     </head>
-    <body style="background-color:#111111" class="scrollpage">
-        
-        <div id="banner">
-            <span>mae</span><span style="color:red;font-weight:300">.red</span>
-            <span id="label"></span>
+    <body style="background-color:#111111">
+        <div id="main">
+            <div id="banner">
+                <span>mae</span><span style="color:red;font-weight:300">.red</span>
+                <span id="label"></span>
+            </div>
+
+            <div id="bgDetails">
+                <div id="bgTitle"></div>
+                <div id="bgDesc"></div>
+                <div id="bgSetting"></div>
+            </div>
         </div>
-        <div id="stretcher" style=""></div>
         <div id="bg1" class="bg"></div>
         <div id="bg2" class="bg"></div>
         <div class="nav" id="nav" >
+            
             <div id="top" class="navLayer" onclick="goToSubPage('projects')">
                 <div class="navButton">projects</div>
             </div>
-            <div id="mid" class="navLayer" onclick="document.getElementById('stretcher').scrollIntoView({behavior: 'smooth'});">
+            <div id="mid" class="navLayer" onclick="goToSubPage('aboutMe')">
                 <div class="navButton">about me</div>
             </div>
             <div id="low" class="navLayer">
@@ -34,11 +42,7 @@
             </div> -->
             
           </div>
-        <div id="bgDetails">
-            <div id="bgTitle"></div>
-            <div id="bgDesc"></div>
-            <div id="bgSetting"></div>
-        </div>
+        
         
         
     </body>

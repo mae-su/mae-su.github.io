@@ -57,31 +57,35 @@
 }
 /* navigation menu response to about me */
 
-.aboutMe #top{
+.sp_aboutMe #top{
   --tray-offset:1;
   opacity:1;
   background-color:var(--black);
 }
 
-.aboutMe #low{
+.sp_aboutMe #low{
   --tray-offset:2;
   opacity:1;
 }
-.aboutMe #mid{
+.sp_aboutMe #mid{
   --tray-offset:2;
 }
-.aboutMe .divider{
+.sp_aboutMe .divider{
   background-color:var(--cream);
   transition-delay:0.5s;
   --tray-width:unset !important;
 }
-.aboutMe .navButton{
+.sp_aboutMe .navButton{
   color:var(--cream);
 }
-.aboutMe .navButton:hover {
+
+.sp_aboutMe .navLayer:hover {
   --tray-hover-expansion:0rem !important;
-text-shadow: 5px -5px 0px var(--cream);
-  
+}
+
+.sp_aboutMe .navButton:hover {
+  --tray-hover-expansion:0rem !important;
+text-shadow: 0px 0px 2px var(--cream);  
 }
 
 #top{
@@ -90,14 +94,14 @@ text-shadow: 5px -5px 0px var(--cream);
 #mid{
   background-color:var(--black);
   --tray-offset:1;
-  z-index:1;
+  z-index:2;
 }
 #low{
   background-color:var(--black);
   
   --tray-offset:1;
   opacity:0;
-  z-index:2;
+  z-index:1;
 }
 
 .navButton{

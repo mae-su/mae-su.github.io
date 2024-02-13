@@ -1,5 +1,9 @@
 const bgDelay = 12000
+SWIPE_THRESHOLD = 78;
 var navLayers;
+var debugDiv;
+var debugHoverStatus;
+var debugLog;
 
 function delay(time) {//get elements by child of nav div instead??
   return new Promise(resolve => setTimeout(resolve, time));
@@ -10,6 +14,10 @@ function addBodyClass(name) {
 
 function rmBodyClass(name) {
   document.body.classList.remove(name)
+}
+
+function toggleBodyClass(name){
+  document.body.classList.toggle(name)
 }
 
 function setMenuSize(size) {
@@ -73,32 +81,66 @@ function applyThemePreference() {
     rmBodyClass('light-mode')
     console.log('Dark mode preference preferred.')
   }
-  window.addEventListener('scroll', function () {
-    const scrolledPast90vh = window.scrollY > 0.1;
-    const navDiv = this.document.getElementById('nav')
-    if (scrolledPast90vh) {
-      addBodyClass('aboutMe')
-      addBodyClass('pageOpen')
-      this.document.getElementById('stretcher').scrollIntoView({behavior: 'smooth'});
-    } else{
-      rmBodyClass('aboutMe')
-      rmBodyClass('pageOpen')
+  document.addEventListener("wheel", function(event) {
+    if (Math.abs(event.deltaY)>SWIPE_THRESHOLD){
+      console.log(event.deltaY)
+      if (event.deltaY < 0) {
+        console.log("Scrolled down");
+        returnToLanding()
+      } else if (event.deltaY > 0) {
+        
+        console.log("Scrolled up");
+        goToSubPage('aboutMe')
+      }
     }
   });
 }
 
+function returnToLanding(page) {
+  document.body.classList = []
+}
+
 function goToSubPage(page) {
-  addBodyClass('subPageOpen');
+  addBodyClass('sp');
   addBodyClass(`sp_${page}`);
 }
 
 document.addEventListener('keydown', function (event) {
-  if (event.key === 'd' || event.key === 'D') {
-    document.body.classList.toggle('light-mode');
-    localStorage.setItem('lightMode', 'disabled');
-    if (document.body.classList.contains('light-mode')) {
-    } else {
-      localStorage.setItem('lightMode', 'enabled');
+  // if (event.key === 'd' || event.key === 'D') {
+  //   document.body.classList.toggle('light-mode');
+  //   localStorage.setItem('lightMode', 'disabled');
+  //   if (document.body.classList.contains('light-mode')) {
+  //   } else {
+  //     localStorage.setItem('lightMode', 'enabled');
+  //   }
+  // }
+  if ((event.key === 'd' || event.key === 'D') && event.altKey && event.shiftKey) {
+    document.body.classList.toggle('debug');
+    if(document.body.classList.contains('debug')){
+      debugDiv = document.createElement('div')
+      debugDiv.classList.add('debugLayer')
+      
+      debugHoverStatus = document.createElement('span')
+      debugHoverStatus.id = 'debugHoverStatus'
+      
+      debugLog = document.createElement('span')
+      debugLog.id = 'debugLog'
+      debugDiv.appendChild(debugLog)
+      debugDiv.appendChild(debugHoverStatus)
+      debugDiv.classList.toString()
+      document.body.appendChild(debugDiv)
+      document.body.addEventListener('mouseover', (event) => {
+      
+        debugHoverStatus.innerText = `${event.target} #${event.target.id} .${event.target.classList.toString().replace(' ',' .')}`
+        // Add more checks for other element types as needed
+      });
+    } else{
+      debugDiv.remove()
+      document.body.removeEventListener('mouseover', (event) => {
+      
+        debugHoverStatus.innerText = `${event.target} #${event.target.id} .${event.target.classList.toString().replace(' ',' .')}`
+        // Add more checks for other element types as needed
+      });
     }
   }
 });
