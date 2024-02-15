@@ -1,7 +1,4 @@
 
-.debug{
-    
-}
 .debugLayer{
     animation: debug-activation 0.5s both;
     position:absolute;

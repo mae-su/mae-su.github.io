@@ -1,49 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="icon" type="image/x-icon" href="../files/logos/mbar-square-transparent.png">
-        <script src="main.js" ></script>
-        <link href="./css/styles.css" rel="stylesheet">
-        <link href="./css/nav.css" rel="stylesheet">
-        <link href="./css/debug.css" rel="stylesheet">
-        <title>mae.red - beta</title>
-    </head>
-    <body style="background-color:#111111">
-        <div id="main">
-            <div id="banner">
-                <span>mae</span><span style="color:red;font-weight:300">.red</span>
-                <span id="label"></span>
-            </div>
 
-            <div id="bgDetails">
-                <div id="bgTitle"></div>
-                <div id="bgDesc"></div>
-                <div id="bgSetting"></div>
-            </div>
+<head>
+    <link rel="icon" type="image/x-icon" href="../files/logos/mbar-square-transparent.png">
+    <script src="main.js"></script>
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/debug.css" rel="stylesheet">
+    <title>mae.red - beta</title>
+</head>
+
+<body style="background-color:#111111" >
+    <div id="main">
+        <div id="banner">
+            <span>mae</span><span style="color:red;font-weight:300">.red</span>
+            <span id="label"></span>
         </div>
-        <div id="bg1" class="bg"></div>
-        <div id="bg2" class="bg"></div>
-        <div class="nav" id="nav" >
+
+        <div id="bgDetails">
+            <div id="bgTitle"></div>
+            <div id="bgDesc"></div>
+            <div id="bgSetting"></div>
+        </div>
+    </div>
+    <div id="aboutMe" class="subpage">
+        <div class="particle" id="particles">
+
+        </div>
+        <div id="bg_particle"></div>
+        <style>
             
-            <div id="top" class="navLayer" onclick="goToSubPage('projects')">
-                <div class="navButton">projects</div>
-            </div>
-            <div id="mid" class="navLayer" onclick="goToSubPage('aboutMe')">
-                <div class="navButton">about me</div>
-            </div>
-            <div id="low" class="navLayer">
-                <div class="navButton">back</div>
-            </div>
-            <div class="navLayer divider" style="--tray-offset:1;"></div>
-            <div class="navLayer divider" style="--tray-offset:2;"></div>
-            <div class="navLayer divider" style="--tray-offset:3;"></div>
-            <!-- <div id="low" class="navLayer" style="--tray-offset:2;background-color:black;">
+            #particles>div{
+                --opacity:0.5;
+                position:absolute;
+                height:10rem;
+                width:0.5rem;
+                  
+                animation:rise-in 0.75s ease both;
+                border-radius:99px
+            }
+            @keyframes rise-in{
+                0%{
+                    opacity:0;
+                    transform: translate(0%, 50%);
+                }
+                100%{
+                    opacity:var(--opacity);
+                    transform: translate(0%, -100%);
+                }
+                
+            }
+        </style>
+    </div>
+    <div id="bg1" class="bg"></div>
+    <div id="bg2" class="bg"></div>
+    <div class="nav" id="nav">
+
+        <div id="top" class="navLayer" onclick="goToSubPage('projects')">
+            <div class="navButton">projects</div>
+        </div>
+        <div id="mid" class="navLayer" onclick="goToSubPage('aboutMe')">
+            <div class="navButton">about me</div>
+        </div>
+        <div id="low" class="navLayer">
+            <div class="navButton">back</div>
+        </div>
+        <div class="navLayer divider" style="--tray-offset:1;"></div>
+        <div class="navLayer divider" style="--tray-offset:2;"></div>
+        <div class="navLayer divider" style="--tray-offset:3;"></div>
+        <!-- <div id="low" class="navLayer" style="--tray-offset:2;background-color:black;">
                 <div class="navButton">donate</div>
             </div> -->
-            
-          </div>
-        
-        
-        
-    </body>
+
+    </div>
+
+
+
+</body>
+
 </html>
