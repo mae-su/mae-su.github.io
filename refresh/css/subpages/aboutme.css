@@ -61,7 +61,10 @@
     font-size: 5em;
     font-weight: 100;
     /* mix-blend-mode: lighten; */
-    color: white;
+    color: var(--white);
     padding-left: 1rem;
+    padding-right: 1rem;
     z-index:10;
+    
 }
+
