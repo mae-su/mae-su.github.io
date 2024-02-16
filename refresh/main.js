@@ -10,7 +10,7 @@ var locale='en';
 // const response = await fetch('./locales/fr.json'); for implementation once setLocale is made
 const currentLocale = {
   ".red": ".rouge",
-  "my name is": "je m'appele",
+  "my name is": "je m'appelle",
   "projects":"projets",
   "about me":"infos",
   "back":"retours",
