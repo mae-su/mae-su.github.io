@@ -5,6 +5,28 @@ var debugDiv;
 var debugHoverStatus;
 var debugLog;
 let particlesDiv;
+var locale='en';
+
+// const response = await fetch('./locales/fr.json'); for implementation once setLocale is made
+const currentLocale = {
+  ".red": ".rouge",
+  "my name is": "je m'appelle",
+  "projects":"projets",
+  "about me":"infos",
+  "back":"retours",
+  
+  "twilight velocity":"vitesse",
+  "a car speeds past a rain covered bench.":"une voiture passe devant un banc couvert de pluie.",
+  "Downtown Millburn, NJ":"Centre-ville de Millburn, New Jersey",
+  "destination":"destination",
+  "a calm river under the night sky.":"une rivière calme sous les étoiles",
+  "Rochester, NY":"Rochester, New York",
+  "angular intake":"à un angle",
+  "the most advanced assembly i've made.":"",
+
+  "kiosk v2":"kiosque v2",
+  "a high end security solution.":"une solution de sécurité, haut de gamme."
+};
 
 function delay(time) {//get elements by child of nav div instead??
   return new Promise(resolve => setTimeout(resolve, time));
@@ -27,6 +49,13 @@ function setMenuSize(size) {
 }
 
 function applyThemePreference() {
+  if(window.location.href.endsWith('fr')){ //to be exported to a function
+    locale='fr';
+    document.getElementById('banner').style.setProperty('--right-max','49%')
+    globalTranslate() //for now this is just french. this can be changed later.
+    console.log('frenchified')
+  }
+
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   }
@@ -49,6 +78,32 @@ function applyThemePreference() {
       }
     }
   });
+}
+
+function localeTranslate(text){
+  if(locale !== 'en'){
+    if (currentLocale.hasOwnProperty(text)) {
+      return currentLocale[text];
+    } else {
+      console.log(`"${text}" did not have a translation for the current locale.`)
+      return text
+    }
+  } else{
+    return text
+  }
+  
+}
+
+function globalTranslate() {
+  const allTextNodes = document.body.querySelectorAll('.l');
+  for (const textNode of allTextNodes) {
+    
+    const text = textNode.textContent.trim();
+    
+    if (currentLocale.hasOwnProperty(text)) {
+      textNode.textContent = localeTranslate(text)
+    }
+  }
 }
 
 function returnToLanding(page) {
@@ -128,6 +183,7 @@ function spawnParticles() {
 //shortcuts
 
 document.addEventListener('keydown', function (event) {
+  
   // if (event.key === 'd' || event.key === 'D') {
   //   document.body.classList.toggle('light-mode');
   //   localStorage.setItem('lightMode', 'disabled');
@@ -216,13 +272,14 @@ async function changeBackground() {
     nextBGDiv.style.opacity = 1;
     currentBGDiv.style.opacity = 0;
     currentBackground = nextBackground;
-
+    
     titleDiv = document.getElementById(`bgTitle`)
-    titleDiv.textContent = nextDetails.name;
+    
+    titleDiv.textContent = localeTranslate(nextDetails.name);
     descDiv = document.getElementById(`bgDesc`)
-    descDiv.textContent = nextDetails.description;
+    descDiv.textContent = localeTranslate(nextDetails.description);
     settingDiv = document.getElementById(`bgSetting`)
-    settingDiv.textContent = nextDetails.setting;
+    settingDiv.textContent = localeTranslate(nextDetails.setting);
 
     currentImage += 1
     bgTimeoutID = setTimeout(() => changeBackground(), bgDelay);

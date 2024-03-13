@@ -66,9 +66,12 @@
 .sp_aboutMe #low{
   --tray-offset:2;
   opacity:1;
+  color:var(--cream);
 }
 .sp_aboutMe #mid{
   --tray-offset:2;
+  opacity:-1;
+  pointer-events: none;
 }
 .sp_aboutMe .divider{
   background-color:var(--cream);
@@ -79,7 +82,7 @@
   color:var(--cream);
 }
 
-.sp_aboutMe .navLayer:hover {
+.sp .navLayer:hover {
   --tray-hover-expansion:0rem !important;
 }
 
@@ -98,7 +101,6 @@ text-shadow: 0px 0px 2px var(--cream);
 }
 #low{
   background-color:var(--black);
-  
   --tray-offset:1;
   opacity:0;
   z-index:1;
@@ -115,6 +117,7 @@ text-shadow: 0px 0px 2px var(--cream);
   --text-diag-offset: calc(((var(--tray-width) / sqrt(2)) * (0.5 + var(--tray-offset))));
   --text-side-offset:calc(var(--nav-size) * .5);
   --text-offset:calc((var(--text-side-offset) - var(--text-diag-offset)) - var(--nav-size-max));
+  pointer-events: inherit;
   right:var(--text-offset);  
   bottom:var(--text-offset);
   color:var(--white);

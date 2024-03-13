@@ -15,20 +15,56 @@
 @keyframes rise-in{
     0%{
         opacity:0;
-        transform: translate(0%, 50%);
+        transform: translateY(50%);
     }
     100%{
         opacity:var(--opacity);
-        transform: translate(0%, -100%);
+        transform: translateY(-100%);
+    }
+}
+@keyframes rise-in-c{
+    0%{
+        opacity:0;
+        transform: translate(-50%, 25%);
+    }
+    100%{
+        opacity:var(--opacity);
+        transform: translate(-50%, -50%);
     }
 }
 @keyframes rise-out{
     0%{
         opacity:var(--opacity);
-        transform: translate(0%, -100%);
+        transform: translateY(-100%);
     }
     100%{
         opacity:0;
-        transform: translate(0%, -250%);
+        transform: translateY(-250%);
     }
 }
+.sp_aboutMe #greeting{
+    
+    animation:rise-in-c 0.75s ease both;
+    animation-delay:0.5s;
+}
+#greeting{
+    transition:all 0.5s ease;
+    opacity:0;
+    position: absolute;
+    pointer-events: all;
+    width: max-content;
+    top: var(--bannerheight);
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-family: 'Univa Nova', sans-serif;
+    font-size: 5em;
+    font-weight: 100;
+    /* mix-blend-mode: lighten; */
+    color: var(--white);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    z-index:10;
+    
+}
+
