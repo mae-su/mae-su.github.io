@@ -36,12 +36,6 @@ a {
     width:95%;
 }
 
-#greeting {
-    font-size: 4em;
-    color: var(--text);
-    font-weight: 300;
-    transition: opacity 0.5s;
-}
 
 #motto {
     opacity: 0;

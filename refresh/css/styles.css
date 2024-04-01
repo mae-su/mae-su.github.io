@@ -108,7 +108,18 @@ body {
 .sp #bgDetails{
     animation:bgdetails-out 0.25s both;
 }
-
+h1,h2,h3,h4,h5,h6{
+    all:unset;
+}
+h2{
+    font-size:0.5em;
+}
+h3{
+    font-size:0.375em;
+}
+h3{
+    font-size:0.375em;
+}
 @keyframes banner-underline {
     0% {
         width: 0%;
