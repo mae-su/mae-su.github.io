@@ -1,184 +1,152 @@
 :root{
-  --trianglesize: 25vmin; /*value overidden by js, for initial before load*/
-  --menubuttoncolor:#FFFFFFDA
+  --nav-size-max:35rem;
+  --nav-size: 25rem; /*value overidden by js, for initial before load*/
+  --tray-width:4rem;
+  --tray-polygon-max:calc((var(--nav-size-max) - var(--nav-size)));
+  --nav-z-offset:-3;
+
+}
+
+@keyframes nav-load{
+  0%{
+    opacity:0;
+    transform:translate(1rem,1rem)
+  }
+  100%{
+    opacity:1;
+    transform:translate(0,0)
+  }
 }
 
 .nav{
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  transition: opacity 1s cubic-bezier(.4,0,.07,.82);
-  transition-delay: 0.1s;
-  opacity:0; /*value overidden by js, for initial before load*/
+  bottom:0;
+  right:0;
+  width:var(--nav-size-max);
+  height:var(--nav-size-max);
+  opacity:0;
+  animation: nav-load 0.5s both;
+  animation-delay:1s;
+  user-select: none !important;  
 }
-
-._aboutMenu .nav{
-  transition:all 1s cubic-bezier(.4, 0, .07, 1.1);
-  transition-delay: 3s;
-  height:6em;
-}
-
-._projectsMenu .nav{
-  transition:all 1s cubic-bezier(.4, 0, .07, 1.1);
-  transition-delay: 1.5s;
-  
-}
-
-._menu .bgoverlay{
-  background-color: rgb(14, 14, 14);
-}
-
-#projectsMenuButton{
-  transform: rotate(-45deg);
-  position:absolute;
-  right:calc((var(--trianglesize) / 2) - 3.8vmin);
-  bottom:calc((var(--trianglesize) / 2) - 0.8vmin);
-  z-index: 3;
-  /* transition: all 1s cubic-bezier(.4,0,.07,.82); */
-}
-
-#siteMenuButton{
-  transform: rotate(-45deg);
-  position:absolute;
-  right:calc((var(--trianglesize) / 2) - 10.75vmin);
-  bottom:calc((var(--trianglesize) / 2) - 6.75vmin);
-  z-index: 4;
-  /* transition: all 1s cubic-bezier(.4,0,.07,.82); */
-}
-
-.navButton{ /*nav button type*/
-  font-size: 4.3vmin;
-  cursor:pointer;
-  position: relative;
-  color: var(--menubuttoncolor);
-  user-select: none;
-  cursor: pointer;
-  opacity:1;
-  transition: all 0.7s cubic-bezier(.4,0,.07,.82);
-  pointer-events: none;
-  transition-delay: 0s;
-}
-
-/*color layers*/
 
 .navLayer{
+  transition:all 0.5s ease;
+  position:absolute;
   width:100%;
   height:100%;
+  bottom:0;
+  right:0;
+  --tray-hover-expansion:0rem;
+  --tray-offset:0;
+  --tray-outer-point-calc:calc(var(--tray-polygon-max) + (var(--tray-offset) * (var(--tray-width) * sqrt(2))) - var(--tray-hover-expansion));
+  --tray-inner-point-calc:calc(var(--tray-outer-point-calc) + (var(--tray-width) * sqrt(2)) + var(--tray-hover-expansion));
+  
+  clip-path:polygon(
+    /*tr outer*/ 100% var(--tray-outer-point-calc), 
+    /*tr inner*/ 100% var(--tray-inner-point-calc), 
+    /*bl inner */ var(--tray-inner-point-calc) 100%,
+    /*bl outer */var(--tray-outer-point-calc) 100% );
+  
+}
+.navLayer.divider{
+  --divider-width:0.1rem;
+  z-index:5;
+  --tray-width:0rem;
+  --tray-inner-point-calc:calc(var(--tray-outer-point-calc) + (var(--divider-width) * sqrt(2)));
+}
+/* navigation menu response to about me */
+
+.sp_aboutMe #top{
+  --tray-offset:1;
   opacity:1;
-  transition: clip-path 1s cubic-bezier(.4,0,.07,.82), opacity 0.2s cubic-bezier(.4,0,.07,.82);
-  position:absolute;
+  background-color:var(--black);
 }
 
-._defaultInteractable .navLayer{
-  cursor:pointer;
+.sp_aboutMe #low{
+  --tray-offset:2;
+  opacity:1;
+  color:var(--cream);
+}
+.sp_aboutMe #mid{
+  --tray-offset:2;
+  opacity:-1;
+  pointer-events: none;
+}
+.sp_aboutMe .divider{
+  background-color:var(--cream);
+  transition-delay:0.5s;
+  --tray-width:unset !important;
+}
+.sp_aboutMe .navButton{
+  color:var(--cream);
+}
+
+.sp .navLayer:hover {
+  --tray-hover-expansion:0rem !important;
+}
+
+.sp_aboutMe .navButton:hover {
+  --tray-hover-expansion:0rem !important;
+text-shadow: 0px 0px 2px var(--cream);  
 }
 
 #top{
-  clip-path: polygon(100% 100%, 100% calc(100vh - var(--trianglesize)), calc(100vw - var(--trianglesize)) 100%);
-  background-color: rgb(12,12,12);
-  z-index:4;
+  background-color:var(--maered);
 }
-
-._defaultInteractable #top:hover{
-  transition: clip-path 0.5s cubic-bezier(.3,0,.07,.82);
-  clip-path: polygon(100% 100%, 100% calc(100vh - var(--trianglesize) - 1vh), calc(100vw - var(--trianglesize) - 1vh) 100%);
-}
-
 #mid{
-  clip-path: polygon(100% 100%, 100% calc(100vh - var(--trianglesize) - 10.5vh), calc(100vw - var(--trianglesize) - 10.5vh) 100%);
-  background: rgb(194, 0, 0);
-  z-index: 2;
+  background-color:var(--black);
+  --tray-offset:1;
+  z-index:2;
 }
-/* 
-._projectsMenu #mid{
-  background: linear-gradient(45deg, #121212 0%, #121212 70%);
-} */
-
-._defaultInteractable #mid:hover{
-  transition: clip-path 0.5s cubic-bezier(.3,0,.07,.82);
-  clip-path: polygon(100% 100%, 100% calc(100vh - var(--trianglesize) - 11.5vh), calc(100vw - var(--trianglesize) - 11.5vh) 100%);
-}
-
-/* general menu transitions */
-
-._menu .navButton {
+#low{
+  background-color:var(--black);
+  --tray-offset:1;
   opacity:0;
+  z-index:1;
 }
 
-/* projects menu transitions */
-
-._projectsMenu #top{
-  transition: clip-path 0.7s cubic-bezier(.82,-0.5,.07,.82);
-  clip-path: polygon(100% 100%, 100% 100vh, 100vw 100%);
+.navButton{
+  transition:all 0.5s ease;
+  position:relative;
+  font-size:calc(var(--tray-width) - 1.5rem);
+  text-align:center;
+  transform-origin: center;
+  transform:translate(-50%, -50%) rotate(-45deg);
+  --tray-offset:inherit;
+  --text-diag-offset: calc(((var(--tray-width) / sqrt(2)) * (0.5 + var(--tray-offset))));
+  --text-side-offset:calc(var(--nav-size) * .5);
+  --text-offset:calc((var(--text-side-offset) - var(--text-diag-offset)) - var(--nav-size-max));
+  pointer-events: inherit;
+  right:var(--text-offset);  
+  bottom:var(--text-offset);
+  color:var(--white);
 }
 
-._projectsMenu #mid{
-  transition: clip-path 1s cubic-bezier(.82,-0.8,.07,.82);
-  transition-delay: 0.3s;
-  clip-path: polygon(100% 100%, 100% -100vw, -100vh 100%)
+.navLayer:hover{
+  --tray-hover-expansion:0.5rem;
+  cursor:pointer;
 }
 
-/* site menu transitions */
-
-._aboutMenu #mid{
-  transition: clip-path 0.7s cubic-bezier(.82,-0.4,.07,.82);
-  clip-path: polygon(100% 100%, 100% 100vh, 100vw 100%);
+.dev .navLayer{
+  opacity:0.5;
+}
+.dev .hoverBound polygon{
+  stroke-width:2;
+  mix-blend-mode: difference;
+  stroke:red;
+  fill:none;
 }
 
-._aboutMenu #top{
-  transition: clip-path 1s cubic-bezier(.82,-0.8,.07,.82);
-  transition-delay: 0.3s;
-  clip-path: polygon(100% 100%, 100% -100vw, -100vh 100%)
-}
-
-.resize-animation-stopper .nav {
+.resizing .nav {
   /* opacity:0 !important; */
   transition: opacity 0.2s cubic-bezier(.4,0,.07,.82)!important;
 }
 
-.resize-animation-stopper .navLayer {
-  transition: opacity 0.5s ease;
-}
-
-.resize-animation-stopper .navButton{
-  transition-delay: none;
-}
 @media (max-width: 600px), (max-aspect-ratio: 11/16) { /*de-yassifies the site for mobile users*/
-  .navButton{
-    pointer-events:all;
-    font-size: 7vw;
-  }
-  #projectsMenuButton{
-    transform: rotate(0deg);
-    bottom:calc(0% + 20px);
-    right:3%;
-  }
-  #siteMenuButton{
-    transform: rotate(0deg);
-    bottom:calc(10% + 20px);
-    right:3%;
-  }
-  .navLayer{
-    opacity:0;
-    transition: clip-path 1s cubic-bezier(.4,0,.07,.82), opacity 0.2s ease;
-    transition-delay: 0s, 1s;
-  }
-  #top{
-    clip-path:polygon(100% 100%,100% 100%,100% 100%);
-  }
-  #mid{
-    clip-path:polygon(100% 100%,100% 100%,100% 100%);
-  }
-  ._menu .navLayer{
-    opacity:1;
-  }
-  #top{
-    clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
-  }
-  .resize-animation-stopper .navLayer {
-    transition: clip-path 1s cubic-bezier(.4,0,.07,.82), opacity 0.5s ease;
-    transition-delay:0s,1s,
+  :root{
+    --tray-width:6.5rem;
+    
+    --nav-size:35rem;
   }
 }

@@ -1,4 +1,4 @@
-[{  "url":"./css/backgrounds/car.webp",
+[{  "url":"./media/backgrounds/car.webp",
     "name":"twilight velocity",
     "alt":"Raindrops on a glistening stone bench in the foreground as a Tesla car passes by at a high speed in the background.",
     "description":"a car speeds past a rain covered bench.",
@@ -6,14 +6,14 @@
     "alignment":"center"
     ,"contrast":"dark"
 },
-{  "url":"./css/backgrounds/destination.webp",
+{  "url":"./media/backgrounds/destination.webp",
     "name":"destination",
     "alt":"Tilted view of a distant highway bridge shimmering over water. There are stars in a blue-tinted sky above. A bike handlebar protrudes from the right side of the photo.",
     "description":"a calm river under the night sky.",
     "setting":"Rochester, NY",
     "alignment":"center",
     "contrast":"dark"
-},{  "url":"./css/backgrounds/mk2_intake.webp",
+},{  "url":"./media/backgrounds/mk2_intake.webp",
     "name":"angular intake",
     "alt":"A geared robotic mechanism sitting in a brightly lit environment with drops around it",
     "description":"the most advanced assembly i've made.",
@@ -21,7 +21,7 @@
     "alignment":"center",
     "contrast":"light"
 },
-{  "url":"./css/backgrounds/mmrk.webp",
+{  "url":"./media/backgrounds/mmrk.webp",
     "name":"kiosk v2",
     "alt":"A white touchscreen kiosk device with a gold-trimmed top suctioned to a glass window. To the right of it, next to an RFID card reader, is a card-sized device it connects to.",
     "description":"a high end security solution.",

@@ -1,45 +1,65 @@
-<html class="_default _defaultInteractable">
+<!DOCTYPE html>
+<html>
 
 <head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
-	<link rel="stylesheet" href="styles.css">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<script src="main.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../files/logos/mbar-square-transparent.png">
+    <script src="main.js"></script>
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/debug.css" rel="stylesheet">
+    <title>mae.red - beta</title>
 </head>
 
-<body>
-	<title>mae.red</title>
-	<meta content="home" property="og:title"/>
-	<meta content="so i like to make things" property="og:description" />
-	<meta content="https://mae.red/favicon.png" property="og:image" />
-	<meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
-	<div class="nav" id="nav">
-		<div id="top" class="navLayer" onclick="expandAboutMenu()"></div>
-		<div id="mid" class="navLayer" onclick="expandProjectsMenu()"></div>
-		<span id="projectsMenuButton" class="navButton modernBlack" onclick="expandProjectsMenu()">projects</span>
-		<span id="siteMenuButton" class="navButton modernBlack" onclick="expandAboutMenu()">about me</span>
-	</div>
-	<!-- <div class="modern" id="banner">mae<span id="red">.red<br><span id="blue">.blue</span></div> -->
-	<div class="modern" id="banner">mae<span id="red">.red</span></div>
+<body style="background-color:var(--black)" >
+    <div id="main">
+        <div id="banner">
+            <span class="l"style='text-shadow:0px 0px 5px var(--black) ;'>mae</span><span style="color:red;font-weight:300" class="l">.red</span>
+            <span id="label"></span>
+        </div>
 
-	<div class="socials" id="socials">
-		<a href="https://github.com/mae-su/" class="modern" id="github">github&nbsp;</a>
-		<a href="https://www.instagram.com/maewasnotfound/" class="modern" id="instagram">&nbsp;instagram&nbsp;</a>
-		<a href="https://dsc.bio/maewasnotfound" class="modern" id="discord">&nbsp;discord</a>
-	</div>
+        <div id="bgDetails">
+            <div id="bgTitle" class="l"></div>
+            <div id="bgDesc" class="l"></div>
+            <div id="bgSetting" class="l"></div>
+        </div>
+    </div>
+    <div id="aboutMe" class="subpage">
+        <div class="particle" id="particles"></div>
+        <div id="greeting">
+            <img src="./media/self/portrait 1.jpg"><br>
+            <h1 class="l">my name is mae.</h1><br style="line-height:0.5em;">
+            
+            <h2 class="l">i'm an engineer fueled by nonstandard solutions.</h2>
+            
+            <div id="border"></div>
+        </div>
+    </div>
+    <div id="bg1" class="bg"></div>
+    <div id="bg2" class="bg"></div>
+    <div class="nav" id="nav">
 
-	<div class="intro">
-		<span id="introHeadline" class="modern">mae <i>(she/her)</i><br></span>
-		<span id="introBody" class="modern"><span style="font-weight:400">hi!! my name is mae. i like to make stuff.</span><br> i have a fascination for pretty much everything tech and manufacturing. i spend a lot of time working on projects, but i also looove exploring, photography, biking, and my silly little headphones.<br> <br>breaking standards is fun! some people know me for my design/machining work with <a href="https://instagram.com/millburnftc">@millburnftc</a> and <a href="https://youtu.be/ZAHKPJXJEfQ">7405X</a>, but a lot of my other work has been behind applied projects. <br><br>i love to talk!! feel free to reach out through my socials below :)<br><br>
-		<i style="font-size:0.75em">currently working on rewriting this site <a href="https://mae.red/refresh/">here</a> :></i> 
-		</span>
-	</div>
-	<div class="header">
-		<span class="header modern" id="aboutTitle">about me</span>
-		<span class="header modern" id="aboutLoading" onclick="siteState()">home</span>
-	</div>
-	
-	<div id="gradientLine"></div>
+        <div id="top" class="navLayer" onclick="goToSubPage('projects')">
+            <div class="navButton l">projects</div>
+        </div>
+        <div id="mid" class="navLayer" onclick="goToSubPage('aboutMe')">
+            <div class="navButton l">about me</div>
+        </div>
+        <div id="low" class="navLayer" onclick="returnToLanding()">
+            <div class="navButton l">back</div>
+        </div>
+        <div class="navLayer divider" style="--tray-offset:1;"></div>
+        <div class="navLayer divider" style="--tray-offset:2;"></div>
+        <div class="navLayer divider" style="--tray-offset:3;"></div>
+        <!-- <div id="low" class="navLayer" style="--tray-offset:2;background-color:black;">
+                <div class="navButton">donate</div>
+            </div> -->
+
+    </div>
+    <style>
+        
+    
+    </style>
 
 </body>
 
