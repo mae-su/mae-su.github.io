@@ -155,7 +155,9 @@ function goToSubPage(page) {
       delay(500).then(() => spawnParticles())
     }
     if (page==='projects'){
-      particlesDiv.classList.add('p_deleting')
+      if (particlesDiv != null){
+        particlesDiv.classList.add('p_deleting')
+      }
       document.body.classList.remove('sp_aboutMe')
       temporaryRedirectNotice()
       

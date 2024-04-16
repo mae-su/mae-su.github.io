@@ -217,6 +217,9 @@ h3{
     #bgDetails{
         top:calc(66.5%);
       }
+      .bg{
+        right:-20%;
+      }
       
   }
   
