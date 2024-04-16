@@ -93,6 +93,30 @@ function localeTranslate(text){
   }
   
 }
+function temporaryRedirectNotice(){ /* some very temporary spaghetti code i implore you to ignore*/
+  document.querySelector('.sp_projects #top>div').style.opacity = 0;
+  document.querySelector('.sp_projects #mid>div').style.opacity = 0;
+  delay(625).then(() => {
+    document.documentElement.style.setProperty('--nav-size', '35rem');
+    document.documentElement.style.setProperty('--tray-width','3.4rem')
+  })
+  delay(1000).then(() => {
+    document.querySelector('.sp_projects #top>div').innerText = 'Exciting changes are coming soon.';
+    document.querySelector('.sp_projects #mid>div').innerHTML = '<span style="font-weight:500">Redirecting to old site...</span>';
+    document.querySelector('.sp_projects #top>div').style.opacity = 0.75;
+    document.querySelector('.sp_projects #mid>div').style.opacity = 1;
+    delay(1000).then(() => {
+      delay(1500).then(() => {
+        document.querySelector('.sp_projects #top>div').style.opacity = 0;
+        document.documentElement.style.setProperty('--maered','#000000')
+        document.querySelector('.sp_projects #mid>div').style.opacity = 0;
+        
+      })
+      delay(2000).then(() => {window.location.href = "./projects/"})
+      
+    })
+  })
+}
 
 function globalTranslate() {
   const allTextNodes = document.body.querySelectorAll('.l');
@@ -107,9 +131,11 @@ function globalTranslate() {
 }
 
 function returnToLanding(page) {
-  document.body.classList = [];
+  if(page == null){
+    document.body.classList = [];
+  }
   particlesDiv.classList.add('p_deleting')
-  delay(500).then(() => {
+  delay(750).then(() => {
     particlesDiv.innerHTML = ''
     leftPosHist = []
     topPosHist = []
@@ -118,7 +144,7 @@ function returnToLanding(page) {
 }
 
 function goToSubPage(page) {
-
+  
   addBodyClass('sp');
   if (!document.body.classList.contains(`sp_${page}`)) {
 
@@ -127,6 +153,12 @@ function goToSubPage(page) {
 
     if (page === 'aboutMe') {
       delay(500).then(() => spawnParticles())
+    }
+    if (page==='projects'){
+      particlesDiv.classList.add('p_deleting')
+      document.body.classList.remove('sp_aboutMe')
+      temporaryRedirectNotice()
+      
     }
   }
 }

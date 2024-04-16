@@ -1,10 +1,6 @@
-/* in case i'm offline lol: */
-@font-face {
-    font-family: "Roboto";
-    src: local("Segoe UI Variable"),
-      url("SEGUIVAR.TTF") format("truetype");
-  }
-
+/* *PREPARING TO DELETE THIS PAGE*
+This was coded back in July of 2022 when I first self taught myself CSS.
+I'm in the works of completely redoing this page in a more stylistic, efficient way. Stay tuned!*/
 body{
     font-family: 'Roboto';
     margin:auto;

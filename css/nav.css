@@ -91,6 +91,50 @@
 text-shadow: 0px 0px 2px var(--cream);  
 }
 
+/* navigation layer response to projects */
+
+.sp_projects #top{
+  --tray-offset:1;
+  
+  background-color:#00000000;
+}
+
+.sp_projects #low{
+  --tray-offset:2;
+
+}
+.sp_projects #mid{
+  --tray-offset:2;
+  pointer-events: none;
+}
+.sp_projects .divider{
+  background-color:var(--maered);
+  transition-delay:0s;
+  --divider-width:0.1rem;
+  --tray-width:unset !important;
+}
+.sp_projects .navButton{
+  color:var(--white);
+}
+
+.sp .navLayer:hover {
+  --tray-hover-expansion:0rem !important;
+}
+
+/* .sp_projects #top>div{
+  opacity:0;
+}
+
+.sp_projects #mid>div{
+  opacity:0;
+} */
+
+.sp_projects .navButton:hover {
+  --tray-hover-expansion:0rem !important;
+text-shadow: 0px 0px 2px var(--cream);  
+}
+/*  */
+
 #top{
   background-color:var(--maered);
 }

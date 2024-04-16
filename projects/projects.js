@@ -1,3 +1,7 @@
+// *PREPARING TO DELETE THIS PAGE*
+// This was coded back in July of 2022 when I first self taught myself JS.
+// I'm in the works of completely redoing this in a more stylistic, efficient way. Stay tuned!
+
 (function () { //https://discourse.webflow.com/t/force-refresh-page-when-user-taps-browser-back-button/159352/2 removes vanilla JS cached states
 	window.onpageshow = function(event) {
 		if (event.persisted) {

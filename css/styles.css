@@ -24,7 +24,7 @@
     transition: opacity 0.5s ease;
 }
 
-.sp_aboutMe .bg{
+.sp .bg{
     opacity:0!important;
 }
 
@@ -49,16 +49,14 @@
 }
 
 body {
+    font-family: 'Univa Nova';
     background-color: var(--black);
     transition: background-color 0.5s;
+    overflow:hidden;
 }
 
 body.light-mode {
     background-color: var(--white);
-}
-
-body {
-    font-family: 'Univa Nova';
 }
 
 #main{
