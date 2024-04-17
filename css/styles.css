@@ -2,6 +2,18 @@
 @import url('scroll.css');
 @import url('./subpages/aboutme.css');
 
+body {
+    font-family: 'Univa Nova';
+    background-color: var(--black);
+    transition: background-color 0.5s;
+    overflow:hidden;
+    padding:0;
+    margin:0;
+}
+
+body.light-mode {
+    background-color: var(--white);
+}
 
 :root {
     --black: #141414;
@@ -43,21 +55,12 @@
 }
 
 #bg2 {
-    background: url('./backgrounds/car.webp') fixed;
+    background: url('../media/backgrounds/car.webp') fixed;
     opacity: 0;
     z-index: -3;
 }
 
-body {
-    font-family: 'Univa Nova';
-    background-color: var(--black);
-    transition: background-color 0.5s;
-    overflow:hidden;
-}
 
-body.light-mode {
-    background-color: var(--white);
-}
 
 #main{
     position: static;
