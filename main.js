@@ -56,9 +56,9 @@ function applyThemePreference() {
     console.log('frenchified')
   }
 
-  // window.onbeforeunload = function () {
-  //   window.scrollTo(0, 0);
-  // }
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
   if (localStorage.getItem('darkMode') === 'enabled') {
     rmBodyClass('light-mode')
     console.log('Restored dark mode preference.')
@@ -152,6 +152,7 @@ function goToSubPage(page) {
     clearTimeout(bgTimeoutID);
 
     if (page === 'aboutMe') {
+      updateSelectWidth();
       delay(500).then(() => spawnParticles())
     }
     if (page==='projects'){
