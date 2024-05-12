@@ -134,7 +134,9 @@ function returnToLanding(page) {
   if(page == null){
     document.body.classList = [];
   }
-  particlesDiv.classList.add('p_deleting')
+  if (particlesDiv != null){
+    particlesDiv.classList.add('p_deleting')
+  }
   delay(750).then(() => {
     particlesDiv.innerHTML = ''
     leftPosHist = []
@@ -152,7 +154,6 @@ function goToSubPage(page) {
     clearTimeout(bgTimeoutID);
 
     if (page === 'aboutMe') {
-      updateSelectWidth();
       delay(500).then(() => spawnParticles())
     }
     if (page==='projects'){
