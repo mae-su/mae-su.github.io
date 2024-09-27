@@ -1,70 +1,102 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="../files/logos/mbar-square-transparent.png">
+<html lang="EN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./favicon.png" />
     <script src="main.js"></script>
-    <link href="./css/styles.css" rel="stylesheet">
-    <link href="./css/nav.css" rel="stylesheet">
-    <link href="./css/debug.css" rel="stylesheet">
-    <title>mae.red - beta</title>
-	<meta content="mae.red" property="og:title"/>
-	<meta content="a site about me, rewritten once more." property="og:description" />
-	<meta content="https://mae.red/media/logos/dotred-square.png" property="og:image" />
-	<meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
-</head>
+    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./css/nav.css" rel="stylesheet" />
+    <link href="./css/debug.css" rel="stylesheet" />
+    <title>mae.red</title>
+    <meta content="mae.red" property="og:title" />
+    <meta content="a site about me, rewritten once more." property="og:description" />
+    <meta content="https://mae.red/media/logos/dotred-square.png" property="og:image" />
+    <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
+  </head>
 
-<body style="background-color:var(--black)" >
+  <body style="background-color: var(--black)">
     <div id="main">
-        <div id="banner">
-            <span class="l"style='text-shadow:0px 0px 5px var(--black) ;'>mae</span><span style="color:red;font-weight:300" class="l">.red</span>
-            <span id="label"></span>
-        </div>
+      <div id="banner">
+        <span class="l" style="text-shadow: 0px 0px 5px var(--black)">mae</span
+        ><span style="color: red; font-weight: 300; text-shadow:0px 0px 5px black" class="l">.red</span>
+        <span id="label"></span>
+      </div>
 
-        <div id="bgDetails">
-            <div id="bgTitle" class="l"></div>
-            <div id="bgDesc" class="l"></div>
-            <div id="bgSetting" class="l"></div>
-        </div>
+      <div id="bgDetails" >
+        <div id="bgTitle" class="l"></div>
+        <div id="bgDesc" class="l"></div>
+        <div id="bgSetting" class="l"></div>
+      </div>
     </div>
     <div id="aboutMe" class="subpage">
-        <div class="particle" id="particles"></div>
-        <div id="greeting">
-            <h1 class="l">my name is mae.</h1><br style="line-height:0.5em;">
-            
-            <h2 class="l">i'm an engineer fueled by nonstandard solutions.</h2>
-            <br>
-            <h3><i style="opacity:0.75">more coming to this rewritten site very soon...</i></h3>
-            <div id="border"></div>
+      <div class="particle" id="particles"></div>
+      <div id="greeting">
+        <h1 class="l">my name is mae.</h1>
+        <br style="line-height: 0.5" />
+        <hr />
+        <h2 class="l">i'm an engineer with a passion for solutions that disrupt standards.</h2>
+        <br />
+        <!-- <h3><i style="opacity:0.75">more coming to this rewritten site very soon...</i></h3> -->
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <br />
+        <div style="text-align: left; vertical-align: middle; font-size: 0.5em; font-weight: 400">
+          <div
+            style="text-align: left; font-weight: 300; color: var(--white); line-height: 1;"
+          >
+            let's get to know each other.
+          </div>
+          <div style="transform: translate(-5px, 5px);line-height: 1.05">
+              <a href="https://www.linkedin.com/in/maered/" target="_blank" rel="noopener noreferrer"><span class="fa fa-linkedin-square" style="color: #0a66c2;padding-left:3px;padding-right:3px;"></span> career </a><br />
+              <a href="https://www.youtube.com/@maedotred" target="_blank" rel="noopener noreferrer"><span class="fa fa-youtube-play" style="color: #ff0000;"></span> channel </a><br />
+              <a href="https://github.com/mae-su/" target="_blank" rel="noopener noreferrer"><span class="fa fa-github" style="color: var(--maered);padding-left:2px;padding-right:2px;"></span> code </a><br />
+              <a onclick="goToSubPage('projects')"><span class="fa fa-cogs" style="color: #ff0000;padding-left:3px;padding-right:3px; font-size:0.8em"></span> projects</a>
+          </div>
         </div>
+        <div id="border"></div>
+      </div>
+      <style>
+        a {
+          transition: all 0.3s ease;
+          text-decoration: none;
+          color: var(--cream);
+          padding: 6px;
+          text-shadow: 0px 0px 0px var(--black);
+          filter: brightness(1);
+          text-shadow: 0px 0px 5px black, 0px 0px 10px black, 0px 0px 10px #00000055;
+            
+          border-radius: 50%;
+        }
+
+        a:hover {
+            /* text-shadow: 0px 0px 5px var(--cream),0px 0px 10px var(--cream),0px 0px 5px var(--cream); */
+            cursor:pointer;
+          filter: brightness(0.8);
+          transform: translateY(-0.05em);
+        }
+      </style>
     </div>
     <div id="bg1" class="bg"></div>
     <div id="bg2" class="bg"></div>
-        <div class="nav" id="nav">
-
-            <div id="top" class="navLayer" onclick="goToSubPage('projects')">
-                <div class="navButton l">projects</div>
-            </div>
-            <div id="mid" class="navLayer" onclick="goToSubPage('aboutMe')">
-                <div class="navButton l">who i am</div>
-            </div>
-            <div id="low" class="navLayer" onclick="returnToLanding()">
-                <div class="navButton l">back</div>
-            </div>
-            <div class="navLayer divider" style="--tray-offset:1;"></div>
-            <div class="navLayer divider" style="--tray-offset:2;"></div>
-            <div class="navLayer divider" style="--tray-offset:3;"></div>
-            <!-- <div id="low" class="navLayer" style="--tray-offset:2;background-color:black;">
+    <div class="nav" id="nav">
+      <div id="top" class="navLayer" onclick="goToSubPage('projects')">
+        <div class="navButton l">projects</div>
+      </div>
+      <div id="mid" class="navLayer" onclick="goToSubPage('aboutMe')">
+        <div class="navButton l">who i am</div>
+      </div>
+      <div id="low" class="navLayer" onclick="returnToLanding()">
+        <div class="navButton l">back</div>
+      </div>
+      <div class="navLayer divider" style="--tray-offset: 1"></div>
+      <div class="navLayer divider" style="--tray-offset: 2"></div>
+      <div class="navLayer divider" style="--tray-offset: 3"></div>
+      <!-- <div id="low" class="navLayer" style="--tray-offset:2;background-color:black;">
                     <div class="navButton">donate</div>
                 </div> -->
-
-        </div>
-    <style>
-        
-    
-    </style>
-
-</body>
-
+    </div>
+    <style></style>
+  </body>
 </html>

@@ -96,25 +96,13 @@ function localeTranslate(text){
 function temporaryRedirectNotice(){ /* some very temporary spaghetti code i implore you to ignore*/
   document.querySelector('.sp_projects #top>div').style.opacity = 0;
   document.querySelector('.sp_projects #mid>div').style.opacity = 0;
-  delay(625).then(() => {
-    document.documentElement.style.setProperty('--nav-size', '35rem');
-    document.documentElement.style.setProperty('--tray-width','3.4rem')
+  document.title='Redirecting...'
+  delay(200).then(() => {
+    
+    document.documentElement.style.setProperty('--maered','var(--black)')
   })
-  delay(1000).then(() => {
-    document.querySelector('.sp_projects #top>div').innerText = 'Exciting changes are coming soon.';
-    document.querySelector('.sp_projects #mid>div').innerHTML = '<span style="font-weight:500">Redirecting to old site...</span>';
-    document.querySelector('.sp_projects #top>div').style.opacity = 0.75;
-    document.querySelector('.sp_projects #mid>div').style.opacity = 1;
-    delay(1000).then(() => {
-      delay(1500).then(() => {
-        document.querySelector('.sp_projects #top>div').style.opacity = 0;
-        document.documentElement.style.setProperty('--maered','#000000')
-        document.querySelector('.sp_projects #mid>div').style.opacity = 0;
-        
-      })
-      delay(2000).then(() => {window.location.href = "./projects/"})
-      
-    })
+  delay(500).then(() => {
+    window.location.href = "./projects/"
   })
 }
 

@@ -1,31 +1,57 @@
-[{  "url":"./media/backgrounds/car.webp",
-    "name":"twilight velocity",
-    "alt":"Raindrops on a glistening stone bench in the foreground as a Tesla car passes by at a high speed in the background.",
-    "description":"a car speeds past a rain covered bench.",
-    "setting":"Downtown Millburn, NJ",
-    "alignment":"center"
-    ,"contrast":"dark"
-},
-{  "url":"./media/backgrounds/destination.webp",
-    "name":"destination",
-    "alt":"Tilted view of a distant highway bridge shimmering over water. There are stars in a blue-tinted sky above. A bike handlebar protrudes from the right side of the photo.",
-    "description":"a calm river under the night sky.",
-    "setting":"Rochester, NY",
-    "alignment":"center",
-    "contrast":"dark"
-},{  "url":"./media/backgrounds/mk2_intake.webp",
-    "name":"angular intake",
-    "alt":"A geared robotic mechanism sitting in a brightly lit environment with drops around it",
-    "description":"the most advanced assembly i've made.",
-    "setting":"Millburn Robotics",
-    "alignment":"center",
-    "contrast":"light"
-},
-{  "url":"./media/backgrounds/mmrk.webp",
-    "name":"kiosk v2",
-    "alt":"A white touchscreen kiosk device with a gold-trimmed top suctioned to a glass window. To the right of it, next to an RFID card reader, is a card-sized device it connects to.",
-    "description":"a high end security solution.",
-    "setting":"Millburn High School",
-    "alignment":"bottom",
-    "contrast":"light"
-}]
+[
+  {
+    "url": "./media/self/moon_tower.webp",
+    "name": "hi there!",
+    "alt": "A woman stands ",
+    "description": "my name is mae.",
+    "setting": "welcome to my happy place.",
+    "alignment": "center",
+    "contrast": "dark"
+  },
+
+  {
+    "url": "./media/backgrounds/mmrk.webp",
+    "name": "kiosk v2",
+    "alt": "A white touchscreen kiosk device with a gold-trimmed top suctioned to a glass window. To the right of it, next to an RFID card reader, is a card-sized device it connects to.",
+    "description": "a high end security solution.",
+    "setting": "Millburn High School",
+    "alignment": "bottom",
+    "contrast": "light"
+  },
+  {
+    "url": "./media/backgrounds/8405_final.webp",
+    "name": "8405 mk2.2",
+    "alt": "A white plastic robot with four wheels and two metal skewer-like roller spokes sits atop a storage cabinet.",
+    "description": "a robot that pushed plastic laser cutting to new limits.",
+    "setting": "Millburn Robotics | 8405",
+    "alignment": "bottom",
+    "contrast": "light"
+  },
+  {
+    "url": "./media/backgrounds/mk2_intake.webp",
+    "name": "angular intake",
+    "alt": "A geared robotic mechanism sitting in a brightly lit environment with drops around it",
+    "description": "the most advanced assembly i've made.",
+    "setting": "Millburn Robotics | 8405",
+    "alignment": "center",
+    "contrast": "light"
+  },
+  {
+    "url": "./media/backgrounds/destination.webp",
+    "name": "destination",
+    "alt": "Tilted view of a distant highway bridge shimmering over water. There are stars in a blue-tinted sky above. A bike handlebar protrudes from the right side of the photo.",
+    "description": "a calm river under the night sky.",
+    "setting": "Rochester, NY",
+    "alignment": "center",
+    "contrast": "dark"
+  },
+  {
+    "url": "./media/backgrounds/car.webp",
+    "name": "twilight velocity",
+    "alt": "Raindrops on a glistening stone bench in the foreground as a Tesla car passes by at a high speed in the background.",
+    "description": "a car speeds past a rain covered bench.",
+    "setting": "Downtown Millburn, NJ",
+    "alignment": "center",
+    "contrast": "light"
+  }
+]

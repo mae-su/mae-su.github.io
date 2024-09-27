@@ -11,14 +11,15 @@
 })();
 var cesiumindex = 2;
 var lastInteract = -100;
-var projects = ['machine room kiosk v2',"millburn robotics",'machine room kiosk v1','signs @ mhs'],
-    motto = ["a lighter and more complete security kiosk.<br>now in gold.","we made it smaller","the first gandalf for the machine room.", 'some CNC machined signs for millburn high school.'],
+var projects = ['machine room kiosk v2','smarter landscape lighting',"millburn robotics",'machine room kiosk v1','signs @ mhs'],
+    motto = ["a lighter and more complete security kiosk.<br>now in gold.","a residential IoT-enabled landscape lighting installation","we made it smaller","the first gandalf for the machine room.", 'some CNC machined signs for millburn high school.'],
     signpics = ['url(sign-1.jpg)', 'url(sign-2.jpg)'],
+    lightingpics = ['url(client_photo.webp)']
     robotpics = ['url(8405.jpg)']
     kioskpics = ['url(kiosk-1.jpg)', 'url(kiosk-2.jpg)', 'url(kiosk-3.jpg)'],
     kioskv2pics = ['url(kioskv2.webp)']
-    bodies = [kioskv2body,robotbody, kioskbody,signbody],
-    images = [['url(kioskv2.webp)'],["url(8405.jpg)"],['url(kiosk-1.jpg)', 'url(kiosk-2.jpg)'], ['url(sign-1.jpg)', 'url(sign-2.jpg)']],
+    bodies = [kioskv2body,lightingbody,robotbody,kioskbody,signbody],
+    images = [['url(kioskv2.webp)'],['url(client_photo.webp)'],["url(8405.jpg)"],['url(kiosk-1.jpg)', 'url(kiosk-2.jpg)'], ['url(sign-1.jpg)', 'url(sign-2.jpg)']],
     index = 0;
 window.onload = function () {
     setTimeout(() => { document.getElementById("curtain").classList.remove("active"); }, 100);
