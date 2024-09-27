@@ -1,4 +1,4 @@
-const bgDelay = 12000
+const bgDelay = 6750
 SWIPE_THRESHOLD = 78;
 var navLayers;
 var debugDiv;
